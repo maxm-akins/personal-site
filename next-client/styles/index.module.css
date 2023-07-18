@@ -1,0 +1,32 @@
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+
+    }
+}
+
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.main {
+    animation: 2s ease-out 0s slideInLeft;
+}
+
+
+.reveal {
+    /* animation-fill-mode: forwards;
+    animation-duration: 1.5s; */
+    animation: slideInDown 1.5s ease-out 0s 1 normal forwards;
+}
