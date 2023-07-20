@@ -49,7 +49,7 @@ export default function aboutThisSite() {
                         fontSize: 60
                     } }
                 >
-                    How this (awesome) website was built
+                    How this website was built
 
                 </Typography>
                 <Typography
