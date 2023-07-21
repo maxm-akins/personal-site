@@ -62,7 +62,7 @@ export default function aboutThisSite() {
                         fontFamily: "Inter",
                         fontWeight: 200,
                         fontSize: 20,
-                        mb: 10
+                        mb: 6
                     } }
                 >
                     July 17, 2023 - Maxm Akins
@@ -72,6 +72,8 @@ export default function aboutThisSite() {
 
 
                 <Grid container spacing={ 4 }>
+
+
                     <Grid item xs={ 12 }
                         sx={ {
                             display: "flex",
@@ -80,7 +82,38 @@ export default function aboutThisSite() {
                         } }
                     >
 
-                        <img src="/images/nextjs-logo.png"
+                        Before you say anything, I know that this entire app could've been delieverd via a static site on GitHub Pages
+                        and it would've taken me one fourth of the time. I know that... <br></br> HOWEVER, I wanted to fully demostrate what I was
+                        capabable of building despite this being just a selfish, self-promting, and rarely changing website. So rather than
+                        make it very simple and to the point, here are all of the various pieces that hold this website together.
+
+
+                    </Grid>
+                    <Grid item xs={ 12 }
+                        sx={ {
+                            display: "flex",
+
+                            position: "relative",
+                        } }
+                    >
+                        <Typography
+                            sx={ {
+                                fontSize: 30,
+                                fontWeight: 900
+                            } }>
+                            Framework:
+
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={ 12 }
+                        sx={ {
+                            display: "flex",
+
+                            position: "relative",
+                        } }
+                    >
+
+                        <img src="/images/Nextjs-logo.png"
 
                         />
                     </Grid>
@@ -119,7 +152,7 @@ export default function aboutThisSite() {
                         </Typography>
                     </Grid>
                     <Grid item xs={ 12 } md={ 4 }>
-                        <img src="/images/reactLogo.png"
+                        <img src="/images/bus.jpg"
                         />
 
                     </Grid>
@@ -190,8 +223,57 @@ export default function aboutThisSite() {
                         alongside Express.js and mongoDB as the primary and notable additions.
                     </Grid>
 
+                    <Grid item xs={ 12 }
+                        sx={ {
+                            display: "flex",
 
+                            position: "relative",
+                        } }
+                    >
+                        <Typography
+                            sx={ {
+                                fontSize: 30,
+                                fontWeight: 900
+                            } }>
+                            Hosting:
 
+                        </Typography>
+                    </Grid>
+
+                    <Grid item xs={ 12 } md={ 6 }>
+                        <img src="/images/nginxLogo.png"
+                        />
+
+                    </Grid>
+                    <Grid item xs={ 12 } md={ 6 }>
+                        <img src="/images/pm2Logo.png"
+                        />
+
+                    </Grid>
+                    <Grid item xs={ 12 } md={ 6 }>
+                        <img src="/images/certBotLogo.png"
+                        />
+
+                    </Grid>
+                    <Grid item xs={ 12 } md={ 6 }>
+                        <img src="/images/ec2Logo.png"
+                        />
+
+                    </Grid>
+                    <Grid item xs={ 12 }
+                        sx={ {
+                            display: "flex",
+
+                            position: "relative",
+                        } }
+                    >
+
+                        To host this site for all to see, I have used the following technologies. Most importantly, I am using
+                        an AWS EC2 Ubuntu instance to host my servers. NGINX is acting as my reverse proxy and web server as it
+                        can be configured to play well with Next.js. I used PM2 to process manage my servers and keep them running
+                        in the event of crashes and/or unexpected shutdowns. Finally, Certbot was used as a way to earn an SSH Certificate
+                        and to make my site accessible only via HTTPS.
+                    </Grid>
 
 
                 </Grid>

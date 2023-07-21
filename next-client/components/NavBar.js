@@ -68,7 +68,7 @@ export default function NavBar({ children, home }) {
                                     <Image src="/images/purpleSig.png" width={ 200 } height={ 50 } alt='nothing'
                                         unoptimized
                                         onClick={ () => {
-                                            router.push('/about-this-site')
+                                            router.push('/about-me')
                                         } }
                                         style={ {
                                             minWidth: 200
@@ -80,7 +80,7 @@ export default function NavBar({ children, home }) {
                                     <Image src="/images/greenSig.png" width={ 200 } height={ 50 } alt='nothing'
                                         unoptimized
                                         onClick={ () => {
-                                            router.push('/about-this-site')
+                                            router.push('/about-me')
                                         } }
                                         style={ {
                                             minWidth: 200
@@ -160,7 +160,7 @@ export default function NavBar({ children, home }) {
                                     >
                                         <List
                                             sx={ {
-                                                backgroundColor: theme.palette.primary.char,
+                                                backgroundColor: router.pathname === "/" ? theme.palette.background.transparentish : theme.palette.primary.char,
                                                 color: theme.palette.primary.white,
                                                 fontWeight: 300,
                                                 zIndex: 1001,
@@ -275,6 +275,9 @@ export default function NavBar({ children, home }) {
                                 sx={ {
                                     m: 3,
                                 } }
+                                onClick={ () => {
+                                    router.push('/about-me')
+                                } }
                             >
                                 <Typography
                                     component={ motion.div }
@@ -344,7 +347,11 @@ export default function NavBar({ children, home }) {
                                         <ListItem disablePadding
                                             sx={ { color: theme.palette.primary.secondary } }
                                         >
-                                            <ListItemButton>
+                                            <ListItemButton
+                                                onClick={ () => {
+                                                    router.push('/')
+                                                } }
+                                            >
                                                 Home
                                             </ListItemButton>
                                         </ListItem>
@@ -382,14 +389,22 @@ export default function NavBar({ children, home }) {
                                         <ListItem disablePadding
                                             sx={ { color: theme.palette.primary.main } }
                                         >
-                                            <ListItemButton>
+                                            <ListItemButton
+                                                onClick={ () => {
+                                                    router.push('/about-this-site')
+                                                } }
+                                            >
                                                 About this site
                                             </ListItemButton>
                                         </ListItem>
                                         <ListItem disablePadding
                                             sx={ { color: theme.palette.primary.main } }
                                         >
-                                            <ListItemButton>
+                                            <ListItemButton
+                                                onClick={ () => {
+                                                    router.push('/about-me')
+                                                } }
+                                            >
                                                 About Me
                                             </ListItemButton>
                                         </ListItem>
