@@ -152,7 +152,7 @@ export default function aboutThisSite() {
                         </Typography>
                     </Grid>
                     <Grid item xs={ 12 } md={ 4 }>
-                        <img src="/images/bus.jpg"
+                        <img src="/images/reactLogo.png"
                         />
 
                     </Grid>

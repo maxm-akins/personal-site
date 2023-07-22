@@ -177,8 +177,14 @@ export default function aboutMe() {
                             position: "relative",
                         } }
                     >
+                        <Typography
+                            sx={ {
+                                fontSize: 20,
+                                fontWeight: 700
+                            } }>
+                            - Pittsburgh Sports (all of them)
+                        </Typography>
 
-                        - Pittsburgh Sports (all of them)
 
                     </Grid>
                     <Grid item xs={ 12 }
@@ -208,33 +214,41 @@ export default function aboutMe() {
                             position: "relative",
                         } }
                     >
-
-                        - Friends
-
+                        <Typography
+                            sx={ {
+                                fontSize: 20,
+                                fontWeight: 700
+                            } }>
+                            - Friends
+                        </Typography>
                     </Grid>
-                    <Grid item xs={ 12 }
-                        sx={ {
-                            display: "flex",
-
-                            position: "relative",
-                        } }
-                    >
-
-                        <img src="/images/Nextjs-logo.png"
-
+                    <Grid item xs={ 12 }>
+                        <img src="/images/friends.jpg"
+                        />
+                    </Grid>
+                    <Grid item xs={ 12 }>
+                        <img src="/images/bus.jpg"
                         />
                     </Grid>
                     <Grid item xs={ 12 }
                         sx={ {
                             display: "flex",
-
+                            mt: 0,
                             position: "relative",
                         } }
                     >
-
-                        - Anything technology
+                        <Typography
+                            sx={ {
+                                fontSize: 10,
+                                fontWeight: 500
+                            } }>
+                            ( ^ my best friend)
+                        </Typography>
 
                     </Grid>
+
+
+
                     <Grid item xs={ 12 }
                         sx={ {
                             display: "flex",
@@ -242,8 +256,21 @@ export default function aboutMe() {
                             position: "relative",
                         } }
                     >
+                        <Typography
+                            sx={ {
+                                fontSize: 20,
+                                fontWeight: 700
+                            } }>
+                            - Anything technology
+                        </Typography>
 
-                        <img src="/images/Nextjs-logo.png"
+
+                    </Grid>
+                    <Grid item xs={ 12 }
+
+                    >
+
+                        <img src="/images/pc.jpg"
 
                         />
                     </Grid>

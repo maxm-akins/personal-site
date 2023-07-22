@@ -31,6 +31,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/about-me.js"
+    ],
+    "/about-this-site": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/about-this-site.js"
     ]
   },
   "ampFirstPages": []
