@@ -116,54 +116,13 @@ export default function WorkExperience({ exps }) {
 
                             </Grid>
                         )
-
-
-
-
-
-
-
-
                     })
 
 
                     }
 
 
-
-
-
-
-
-
-
-
-
-
-
                 </Grid>
-
-
-                <Button
-                    onClick={ async () => {
-                        const res = await axios.get(
-                            "http://localhost:3001/data/workExperience",
-                            {
-                                headers:
-                                {
-                                    "Content-Type": "application/json",
-                                    "CRSF-Test-Header": "CRSF-Test"
-                                },
-                            }
-                        );
-                        console.log(res.data);
-
-                    }
-                    }
-                >
-
-                    Click!
-                </Button>
 
 
             </Box>

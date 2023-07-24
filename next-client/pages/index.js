@@ -90,12 +90,12 @@ export default function Home({ allPostsData }) {
                   textDecoration: "none",
                   display: "inline-block"
                 } }
-                href="/" >  <Box sx={ {
+                href="/about-me" >  <Box sx={ {
                   transition: "all .5s",
                   fontWeight: 700,
                   color: theme.palette.primary.main,
                   "&:hover": {
-                    color: theme.palette.background.transparentish
+                    color: theme.palette.primary.char
                   },
                 } }> Maxm Akins </Box>
               </Link>

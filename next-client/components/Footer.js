@@ -58,30 +58,7 @@ export default function Footer({ children, home }) {
                         >
                             Resume
                         </Typography>
-                        <Typography
-                            align='left'
-                            sx={ {
-                                // background: `linear-gradient(110deg, ${theme.palette.primary.main} , ${theme.palette.primary.secondary} )`,
-                                // backgroundClip: "text",
-                                width: "100%",
-                                color: theme.palette.primary.white,
-                                fontFamily: "Inter",
-                                fontWeight: 200,
-                                fontSize: 15,
-                                mb: 1,
-                                transition: "all .15s",
-                                "&:hover": {
-                                    color: theme.palette.primary.main,
 
-                                    textDecoration: "underline"
-                                }
-                            } }
-                            onClick={ () => {
-                                router.push("/links-and-contact")
-                            } }
-                        >
-                            Links and Contact
-                        </Typography>
 
                         <Typography
                             align='left'
@@ -130,7 +107,30 @@ export default function Footer({ children, home }) {
                         >
                             About me
                         </Typography>
+                        <Typography
+                            align='left'
+                            sx={ {
+                                // background: `linear-gradient(110deg, ${theme.palette.primary.main} , ${theme.palette.primary.secondary} )`,
+                                // backgroundClip: "text",
+                                width: "100%",
+                                color: theme.palette.primary.white,
+                                fontFamily: "Inter",
+                                fontWeight: 200,
+                                fontSize: 15,
+                                mb: 1,
+                                transition: "all .15s",
+                                "&:hover": {
+                                    color: theme.palette.primary.main,
 
+                                    textDecoration: "underline"
+                                }
+                            } }
+                            onClick={ () => {
+                                router.push("/links-and-contact")
+                            } }
+                        >
+                            Links and Contact
+                        </Typography>
 
 
 

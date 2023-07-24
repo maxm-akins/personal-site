@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 require("dotenv").config();
 const verifyJWT = require("../middleware/verifyJWT");
-const WorkExperiencesModel = require("../models/WorkExperiencesModel")
-const ProjectsModel = require("../models/ProjectsModel")
+const WorkExperiencesModel = require("../models/WorkExperiencesModel");
+const ProjectsModel = require("../models/ProjectsModel");
+const ClassesModel = require("../models/ClassesModel");
 // PROP TYPE END POINTS
 
 
@@ -33,17 +34,32 @@ router.get('/projects', async (req, res) => {
     }
 });
 
+router.get('/classes', async (req, res) => {
+    try {
+        const classes = await ClassesModel.find({}, { _id: 0, __v: 0 });
+        console.log(classes);
+
+        res.status(200).json(classes);
+    }
+    catch (err) {
+        console.log(err);
+        res.sendStatus(400);
+    }
+});
+
 
 router.post('/workExperience', async (req, res) => {
     try {
-        const proj = new ProjectsModel({});
-        proj.name = "Language Development Site"
-        proj.details = "During my work in the FACETLab at Pitt, I assisted in the conversion of a Objective C iOS app into a React based website. This website helped young children develop their English and/or Spanish comprehension skills while allowing reasearchers to analyze the factors which contributed or hindered the children's learning."
-        proj.order = 1
+        const newClass = new ClassesModel({});
+        newClass.name = "Applied Statistical Methods"
+        newClass.details = "This course is an intensive introduction to statistical methods. It is designed for students who want to do data analysis and to study further ideas in applied statistics beyond this course. The topics covered include descriptive statistics, elementary probability, random sampling, controlled experiments, hypothesis testing, regression and the analysis of variance. Emphasis will be placed on the statistical reasoning underlying the methods. Students will also become proficient at the use of a statistical software package."
+        newClass.grade = "A"
+        newClass.term = "Fall 2022-2023"
+        newClass.code = "STAT 1000"
 
 
 
-        proj.save().then(() => {
+        newClass.save().then(() => {
             console.log("new proj experience saved");
             res.status(200).json({ message: "Data Successfully Created." });
             return

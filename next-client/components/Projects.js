@@ -34,11 +34,14 @@ export default function Projects({ projs }) {
                     { projs.map((item) => {
 
                         return (
-                            <Grid item xs={ 6 } >
+                            <Grid item xs={ 12 } md={ 6 } >
                                 <Paper elevation={ 8 }
                                     sx={ {
                                         p: 2,
-                                        height: "100%"
+                                        height: "100%",
+                                        display: "flex",
+                                        flexWrap: "wrap",
+                                        alignItems: "flex-start"
                                     } }
                                 >
                                     <Typography
@@ -55,6 +58,7 @@ export default function Projects({ projs }) {
 
                                     <Typography
                                         sx={ {
+                                            width: "100%",
                                             fontSize: 15,
                                             fontWeight: 500,
                                             color: theme.palette.primary.main,

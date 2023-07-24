@@ -266,27 +266,7 @@ export default function NavBar({ children, home }) {
 
                                 ) }
                             </Box>
-                            <Box
-                                sx={ {
-                                    m: 3,
-                                } }
-                                onClick={ () => {
-                                    router.push('/links-and-contact')
-                                } }
 
-                            >
-
-                                <Typography
-                                    component={ motion.div }
-                                    whileHover={ { scale: 1.3 } }
-                                    whileTap={ { scale: 0.9 } }
-                                    sx={ {
-                                        fontSize: "0.8em",
-                                        fontWeight: 300,
-                                    } }>
-                                    Links and Contact
-                                </Typography>
-                            </Box>
 
                             <Box
                                 sx={ {
@@ -325,6 +305,27 @@ export default function NavBar({ children, home }) {
                                         fontWeight: 300,
                                     } }>
                                     About Me
+                                </Typography>
+                            </Box>
+                            <Box
+                                sx={ {
+                                    m: 3,
+                                } }
+                                onClick={ () => {
+                                    router.push('/links-and-contact')
+                                } }
+
+                            >
+
+                                <Typography
+                                    component={ motion.div }
+                                    whileHover={ { scale: 1.3 } }
+                                    whileTap={ { scale: 0.9 } }
+                                    sx={ {
+                                        fontSize: "0.8em",
+                                        fontWeight: 300,
+                                    } }>
+                                    Links and Contact
                                 </Typography>
                             </Box>
                         </Box>
@@ -395,38 +396,56 @@ export default function NavBar({ children, home }) {
                                         <Divider />
 
                                         <ListItem disablePadding>
-                                            <ListItemButton>
+                                            <ListItemButton
+                                                onClick={ () => {
+                                                    router.push({
+                                                        pathname: '/resume',
+                                                        query: { "q": "0" }
+                                                    })
+                                                } }
+                                            >
                                                 Work Experience
                                             </ListItemButton>
                                         </ListItem>
                                         <ListItem disablePadding>
-                                            <ListItemButton>
+                                            <ListItemButton
+                                                onClick={ () => {
+                                                    router.push({
+                                                        pathname: '/resume',
+                                                        query: { "q": "1" }
+                                                    })
+                                                } }
+                                            >
                                                 Projects
                                             </ListItemButton>
                                         </ListItem>
                                         <ListItem disablePadding>
-                                            <ListItemButton>
+                                            <ListItemButton
+                                                onClick={ () => {
+                                                    router.push({
+                                                        pathname: '/resume',
+                                                        query: { "q": "2" }
+                                                    })
+                                                } }
+                                            >
                                                 Degree Progress
                                             </ListItemButton>
                                         </ListItem>
                                         <ListItem disablePadding>
-                                            <ListItemButton>
+                                            <ListItemButton
+                                                onClick={ () => {
+                                                    router.push({
+                                                        pathname: '/resume',
+                                                        query: { "q": "3" }
+                                                    })
+                                                } }
+                                            >
                                                 Skills and Achievements
                                             </ListItemButton>
                                         </ListItem>
                                         <Divider />
 
-                                        <ListItem disablePadding
-                                            sx={ { color: theme.palette.primary.main } }
-                                        >
-                                            <ListItemButton
-                                                onClick={ () => {
-                                                    router.push('/links-and-contact')
-                                                } }
-                                            >
-                                                Links and Contact
-                                            </ListItemButton>
-                                        </ListItem>
+
                                         <ListItem disablePadding
                                             sx={ { color: theme.palette.primary.main } }
                                         >
@@ -447,6 +466,17 @@ export default function NavBar({ children, home }) {
                                                 } }
                                             >
                                                 About Me
+                                            </ListItemButton>
+                                        </ListItem>
+                                        <ListItem disablePadding
+                                            sx={ { color: theme.palette.primary.main } }
+                                        >
+                                            <ListItemButton
+                                                onClick={ () => {
+                                                    router.push('/links-and-contact')
+                                                } }
+                                            >
+                                                Links and Contact
                                             </ListItemButton>
                                         </ListItem>
 

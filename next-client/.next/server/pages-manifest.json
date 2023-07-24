@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/about-this-site": "pages/about-this-site.js",
   "/resume": "pages/resume.js",
-  "/links-and-contact": "pages/links-and-contact.js"
+  "/links-and-contact": "pages/links-and-contact.js",
+  "/": "pages/index.js"
 }
