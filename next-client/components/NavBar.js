@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 export default function NavBar({ children, home }) {
@@ -77,7 +78,7 @@ export default function NavBar({ children, home }) {
 
                                     />
                                 ) : (
-                                    <Image src="/images/greenSig.png" width={ 200 } height={ 50 } alt='nothing'
+                                    <Image src="/images/lightBlueSig.png" width={ 200 } height={ 50 } alt='nothing'
                                         unoptimized
                                         onClick={ () => {
                                             router.push('/about-me')
@@ -125,6 +126,7 @@ export default function NavBar({ children, home }) {
 
 
                             <Box
+
                                 onMouseEnter={ () => setShowMenu(true) }
                                 onMouseLeave={ () => setShowMenu(false) }
                                 sx={ {
@@ -142,7 +144,7 @@ export default function NavBar({ children, home }) {
                                         height: "100%",
 
                                     } }>
-                                    Why I'm so great
+                                    Resume
                                 </Typography>
 
                                 { showMenu && (
@@ -170,8 +172,18 @@ export default function NavBar({ children, home }) {
                                             } }
                                         >
 
+
+
                                             <ListItem disablePadding>
-                                                <ListItemButton>
+                                                <ListItemButton
+                                                    onClick={ () => {
+                                                        router.push({
+                                                            pathname: '/resume',
+                                                            query: { "q": "0" }
+                                                        })
+
+                                                    } }
+                                                >
                                                     <ListItemIcon>
                                                         <Icon className='material-symbols-outlined'
                                                             sx={ {
@@ -187,7 +199,14 @@ export default function NavBar({ children, home }) {
                                             </ListItem>
 
                                             <ListItem disablePadding>
-                                                <ListItemButton>
+                                                <ListItemButton
+                                                    onClick={ () => {
+                                                        router.push({
+                                                            pathname: '/resume',
+                                                            query: { "q": "1" }
+                                                        })
+                                                    } }
+                                                >
                                                     <ListItemIcon>
                                                         <Icon className='material-symbols-outlined'
                                                             sx={ {
@@ -201,7 +220,14 @@ export default function NavBar({ children, home }) {
                                                 </ListItemButton>
                                             </ListItem>
                                             <ListItem disablePadding>
-                                                <ListItemButton>
+                                                <ListItemButton
+                                                    onClick={ () => {
+                                                        router.push({
+                                                            pathname: '/resume',
+                                                            query: { "q": "2" }
+                                                        })
+                                                    } }
+                                                >
                                                     <ListItemIcon>
                                                         <Icon className='material-symbols-outlined'
                                                             sx={ {
@@ -215,7 +241,14 @@ export default function NavBar({ children, home }) {
                                                 </ListItemButton>
                                             </ListItem>
                                             <ListItem disablePadding>
-                                                <ListItemButton>
+                                                <ListItemButton
+                                                    onClick={ () => {
+                                                        router.push({
+                                                            pathname: '/resume',
+                                                            query: { "q": "3" }
+                                                        })
+                                                    } }
+                                                >
                                                     <ListItemIcon>
                                                         <Icon className='material-symbols-outlined'
                                                             sx={ {
@@ -237,8 +270,12 @@ export default function NavBar({ children, home }) {
                                 sx={ {
                                     m: 3,
                                 } }
+                                onClick={ () => {
+                                    router.push('/links-and-contact')
+                                } }
 
                             >
+
                                 <Typography
                                     component={ motion.div }
                                     whileHover={ { scale: 1.3 } }
@@ -382,7 +419,11 @@ export default function NavBar({ children, home }) {
                                         <ListItem disablePadding
                                             sx={ { color: theme.palette.primary.main } }
                                         >
-                                            <ListItemButton>
+                                            <ListItemButton
+                                                onClick={ () => {
+                                                    router.push('/links-and-contact')
+                                                } }
+                                            >
                                                 Links and Contact
                                             </ListItemButton>
                                         </ListItem>

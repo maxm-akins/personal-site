@@ -17,7 +17,9 @@ const dbURL =
   process.env.MONGO_URL;
 
 mongoose
-  .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(dbURL, {
+    useNewUrlParser: true, useUnifiedTopology: true, dbName: 'personal-site',
+  })
   .then(() => console.log("DB Connected!"));
 
 

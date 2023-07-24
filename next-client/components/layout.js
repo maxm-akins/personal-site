@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import NavBar from './NavBar';
+import Footer from './Footer';
 import splash from "../public/images/splash.jpg"
 
 const name = 'Maxm Akins';
@@ -42,8 +43,9 @@ export default function Layout({ children, home }) {
 
 
 
-
+                <Footer />
             </Box>
+
         </>
 
 

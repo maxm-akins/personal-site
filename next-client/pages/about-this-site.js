@@ -29,8 +29,9 @@ export default function aboutThisSite() {
                     transition: "all 1s",
                     height: "100%",
                     width: "100%",
-                    p: expand ? "15%" : "30%",
+                    p: expand ? "15%" : "29%",
                     pt: 11,
+                    pb: 5,
 
 
                 } }
@@ -46,13 +47,14 @@ export default function aboutThisSite() {
                         color: theme.palette.primary.main,
                         fontFamily: "Inter",
                         fontWeight: 900,
-                        fontSize: 60
+                        fontSize: 60,
+                        mb: 3
                     } }
                 >
                     How this (awesome) website was built
 
                 </Typography>
-                <Typography
+                {/* <Typography
                     align='left'
                     sx={ {
                         // background: `linear-gradient(110deg, ${theme.palette.primary.main} , ${theme.palette.primary.secondary} )`,
@@ -68,7 +70,7 @@ export default function aboutThisSite() {
                     July 17, 2023 - Maxm Akins
 
                 </Typography>
-
+ */}
 
 
                 <Grid container spacing={ 4 }>
@@ -83,7 +85,7 @@ export default function aboutThisSite() {
                     >
 
                         Before you say anything, I know that this entire app could've been delieverd via a static site on GitHub Pages
-                        and it would've taken me one fourth of the time. I know that... <br></br> HOWEVER, I wanted to fully demostrate what I was
+                        and it would've taken me one fourth of the time. I know that... <br></br> <br></br> However, I wanted to fully demostrate what I was
                         capabable of building despite this being just a selfish, self-promting, and rarely changing website. So rather than
                         make it very simple and to the point, here are all of the various pieces that hold this website together.
 

@@ -29,8 +29,9 @@ export default function aboutMe() {
                     transition: "all 1s",
                     height: "100%",
                     width: "100%",
-                    p: expand ? "15%" : "30%",
+                    p: expand ? "15%" : "29%",
                     pt: 11,
+                    pb: 5
 
 
                 } }
@@ -108,7 +109,7 @@ export default function aboutMe() {
                     >
 
                         I went to high school in Littlestown, PA. (Yes, thats what its actually called. And yes, it was little.)
-                        Throughout high school I was a member of Future Business Leader of America where I served as Reporter and President. Additionally,
+                        Throughout high school I was a member of Future Business Leaders of America where I served as Reporter and President of our local chapter. Additionally,
                         I was captain of our football team. I graduated as Valedictorian in 2021.
 
 
@@ -145,12 +146,9 @@ export default function aboutMe() {
                         } }
                     >
 
-                        I currently enrolled at the University of Pittsburgh - Main Campus with
-                        a intended graduation date in Spring of 2025. I am, as I am sure you are aware,
-                        a computer science major. Please don't hold that against my social skills. I have a
-                        current GPA of 3.9 and have made the School of Computing and Information's Dean's List
+                        I am currently enrolled at the University of Pittsburgh - Main Campus as a Computer Science major (please don't hold that against my social skills). I have an
+                        intended graduation date in Spring of 2025.  I currently have a GPA of 3.9 and have made the School of Computing and Information's Dean's List
                         in all four of my semesters at Pitt.
-
 
                     </Grid>
                     <Grid item xs={ 12 }
@@ -229,22 +227,14 @@ export default function aboutMe() {
                     <Grid item xs={ 12 }>
                         <img src="/images/bus.jpg"
                         />
-                    </Grid>
-                    <Grid item xs={ 12 }
-                        sx={ {
-                            display: "flex",
-                            mt: 0,
-                            position: "relative",
-                        } }
-                    >
                         <Typography
                             sx={ {
-                                fontSize: 10,
-                                fontWeight: 500
+                                fontSize: 15,
+                                fontWeight: 500,
+                                mt: 1
                             } }>
-                            ( ^ my best friend)
+                            ^ my best friend
                         </Typography>
-
                     </Grid>
 
 
@@ -273,6 +263,15 @@ export default function aboutMe() {
                         <img src="/images/pc.jpg"
 
                         />
+                        <Typography
+                            sx={ {
+                                fontSize: 15,
+                                fontWeight: 500,
+                                mt: 1
+
+                            } }>
+                            I built my first computer during my freshman year of high school and have been upgrading and rebuilding it ever since.
+                        </Typography>
                     </Grid>
 
                 </Grid>
