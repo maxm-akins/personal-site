@@ -13,6 +13,7 @@ const lightTheme = createTheme({
     background: {
       main: "#7D8491",
       transparentish: " rgba(255, 255, 255, 0.2)",
+      barelyTransparent: " rgba(255, 255, 255, 0.8)",
       almostTransparent: " rgba(243, 244, 249, 0.2)",
       transparent: " rgba(243, 244, 249, 0.0)",
       white: "#FFFFFF",

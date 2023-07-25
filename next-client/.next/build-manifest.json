@@ -12,6 +12,11 @@
   ],
   "rootMainFiles": [],
   "pages": {
+    "/": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -22,15 +27,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/about-me": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/about-me.js"
+    ],
+    "/about-this-site": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/about-this-site.js"
+    ],
     "/links-and-contact": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/links-and-contact.js"
-    ],
-    "/resume": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/resume.js"
     ]
   },
   "ampFirstPages": []

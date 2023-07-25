@@ -96,7 +96,7 @@ export default function resume({ exps, projs, classes }) {
                     transition: "all 1s",
                     height: "100%",
                     width: "100%",
-                    p: expand ? "15%" : "20%",
+                    p: expand ? "5%" : "20%",
                     pt: 11,
                     pb: 5,
                     minHeight: "100vh"

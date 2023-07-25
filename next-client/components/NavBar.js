@@ -374,7 +374,7 @@ export default function NavBar({ children, home }) {
                                         sx={ {
                                             backdropFilter: "blur(3px)",
                                             color: theme.palette.primary.char,
-                                            backgroundColor: router.pathname === "/" ? theme.palette.background.white : theme.palette.background.transparentish,
+                                            backgroundColor: router.pathname === "/" ? theme.palette.background.white : theme.palette.background.barelyTransparent,
                                             fontWeight: 300,
                                             pt: 7,
                                             display: "flex",
@@ -388,6 +388,7 @@ export default function NavBar({ children, home }) {
                                             <ListItemButton
                                                 onClick={ () => {
                                                     router.push('/')
+                                                    setShowCollapseMenu(false);
                                                 } }
                                             >
                                                 Home
@@ -401,7 +402,8 @@ export default function NavBar({ children, home }) {
                                                     router.push({
                                                         pathname: '/resume',
                                                         query: { "q": "0" }
-                                                    })
+                                                    });
+                                                    setShowCollapseMenu(false);
                                                 } }
                                             >
                                                 Work Experience
@@ -413,7 +415,8 @@ export default function NavBar({ children, home }) {
                                                     router.push({
                                                         pathname: '/resume',
                                                         query: { "q": "1" }
-                                                    })
+                                                    });
+                                                    setShowCollapseMenu(false);
                                                 } }
                                             >
                                                 Projects
@@ -425,7 +428,8 @@ export default function NavBar({ children, home }) {
                                                     router.push({
                                                         pathname: '/resume',
                                                         query: { "q": "2" }
-                                                    })
+                                                    });
+                                                    setShowCollapseMenu(false);
                                                 } }
                                             >
                                                 Degree Progress
@@ -437,7 +441,8 @@ export default function NavBar({ children, home }) {
                                                     router.push({
                                                         pathname: '/resume',
                                                         query: { "q": "3" }
-                                                    })
+                                                    });
+                                                    setShowCollapseMenu(false);
                                                 } }
                                             >
                                                 Skills and Achievements
@@ -451,7 +456,8 @@ export default function NavBar({ children, home }) {
                                         >
                                             <ListItemButton
                                                 onClick={ () => {
-                                                    router.push('/about-this-site')
+                                                    router.push('/about-this-site');
+                                                    setShowCollapseMenu(false);
                                                 } }
                                             >
                                                 About this site
@@ -462,7 +468,8 @@ export default function NavBar({ children, home }) {
                                         >
                                             <ListItemButton
                                                 onClick={ () => {
-                                                    router.push('/about-me')
+                                                    router.push('/about-me');
+                                                    setShowCollapseMenu(false);
                                                 } }
                                             >
                                                 About Me
@@ -473,7 +480,8 @@ export default function NavBar({ children, home }) {
                                         >
                                             <ListItemButton
                                                 onClick={ () => {
-                                                    router.push('/links-and-contact')
+                                                    router.push('/links-and-contact');
+                                                    setShowCollapseMenu(false);
                                                 } }
                                             >
                                                 Links and Contact

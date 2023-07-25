@@ -196,8 +196,16 @@ export default function Footer({ children, home }) {
 
                         </IconButton>
 
+                        <Box
+                            sx={ {
+                                width: "100%",
+                                display: "flex",
+                                justifyContent: "end"
+                            } }
+                        >
+                            <img src='/images/MA_logo_alt.png' style={ { maxHeight: 60, } } />
 
-
+                        </Box>
 
                     </Grid>
 

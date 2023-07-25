@@ -56,14 +56,13 @@ export default function aboutMe() {
 
 
 
-                <Grid container spacing={ 4 }>
+                <Grid container spacing={ 2 }>
 
 
 
                     <Grid item xs={ 12 }
                         sx={ {
                             display: "flex",
-
                             position: "relative",
                         } }
                     >
@@ -76,29 +75,41 @@ export default function aboutMe() {
 
                         </Typography>
                     </Grid>
-                    <Grid item xs={ 12 } md={ 4 }
+                    <Grid item xs={ 12 } md={ 6 }
                     >
 
-                        <img src="/images/grad.jpeg"
+                        <img src="/images/grad.jpg"
 
                         />
                     </Grid>
-                    <Grid item xs={ 12 } md={ 5 }
+                    <Grid item xs={ 12 } md={ 6 }
+                    >
 
+                        <img src="/images/mom.jpg"
+
+                        />
+                    </Grid>
+                    <Grid item xs={ 12 } md={ 6 }
+
+                    >
+
+                        <img src="/images/football2.jpg"
+
+                        />
+                    </Grid>
+                    <Grid item xs={ 12 } md={ 6 }
+                        sx={ {
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
+                        } }
                     >
 
                         <img src="/images/fblaLogo.png"
 
                         />
                     </Grid>
-                    <Grid item xs={ 12 } md={ 3 }
 
-                    >
-
-                        <img src="/images/football.png"
-
-                        />
-                    </Grid>
 
                     <Grid item xs={ 12 }
                         sx={ {
@@ -130,11 +141,19 @@ export default function aboutMe() {
 
                         </Typography>
                     </Grid>
-                    <Grid item xs={ 12 }
+                    <Grid item xs={ 12 } md={ 6 }
 
                     >
 
                         <img src="/images/pittMoveIn.jpg"
+
+                        />
+                    </Grid>
+                    <Grid item xs={ 12 } md={ 6 }
+
+                    >
+
+                        <img src="/images/pitt2.jpg"
 
                         />
                     </Grid>
@@ -185,7 +204,7 @@ export default function aboutMe() {
 
 
                     </Grid>
-                    <Grid item xs={ 12 }
+                    <Grid item xs={ 12 } md={ 6 }
 
                     >
 
@@ -193,7 +212,7 @@ export default function aboutMe() {
 
                         />
                     </Grid>
-                    <Grid item xs={ 12 }
+                    <Grid item xs={ 12 } md={ 6 }
 
                     >
 
@@ -220,11 +239,11 @@ export default function aboutMe() {
                             - Friends
                         </Typography>
                     </Grid>
-                    <Grid item xs={ 12 }>
+                    <Grid item xs={ 12 } md={ 6 }>
                         <img src="/images/friends.jpg"
                         />
                     </Grid>
-                    <Grid item xs={ 12 }>
+                    <Grid item xs={ 12 } md={ 6 }>
                         <img src="/images/bus.jpg"
                         />
                         <Typography
@@ -256,9 +275,7 @@ export default function aboutMe() {
 
 
                     </Grid>
-                    <Grid item xs={ 12 }
-
-                    >
+                    <Grid item xs={ 12 }   >
 
                         <img src="/images/pc.jpg"
 
