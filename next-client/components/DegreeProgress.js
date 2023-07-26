@@ -60,7 +60,7 @@ export default function DegreeProgress({ classes }) {
                                 } }
                             >
 
-                                Current Year: <strong> Junoir </strong>
+                                Current Year: <strong> Junior </strong>
                             </Typography>
 
                         </Grid>
