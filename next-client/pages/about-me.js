@@ -85,7 +85,7 @@ export default function aboutMe() {
                     <Grid item xs={ 12 } md={ 6 }
                     >
 
-                        <img src="/images/mom.jpg"
+                        <img src="/images/momHoco.jpg"
 
                         />
                     </Grid>
