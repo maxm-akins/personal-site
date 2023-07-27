@@ -1,23 +1,12 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import styles from '../styles/index.module.css';
-import { Box, Grid, Paper, Typography, useMediaQuery, SvgIcon, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Snackbar } from '@mui/material';
+import { Box, Grid, Typography, useMediaQuery, List, ListItem, ListItemButton, ListItemIcon, Snackbar } from '@mui/material';
 import { useTheme } from '@emotion/react';
-import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
-import { headers } from 'next/dist/client/components/headers';
-
-import Image from 'next/image';
 import { useState } from 'react';
-
-
 
 export default function linksAndContact() {
     const theme = useTheme();
     let expand = useMediaQuery(theme.breakpoints.down('md'))
     const [openSnack, setOpenSnack] = useState(false);
-
-
 
 
 

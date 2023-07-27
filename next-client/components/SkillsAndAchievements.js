@@ -1,18 +1,6 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import styles from '../styles/index.module.css';
-import { Box, Grid, Button, Divider, Paper, Tooltip, Accordion, AccordionSummary, AccordionDetails, Typography, Alert, useMediaQuery, Tab, Tabs, CustomTabPanel, useRadioGroup, collapseClasses, Icon } from '@mui/material';
+
+import { Box, Grid, Divider, Tooltip, Typography, Icon } from '@mui/material';
 import { useTheme } from '@emotion/react';
-import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
-import { headers } from 'next/dist/client/components/headers';
-import axios from "axios";
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-
-
-
 
 
 export default function SkillsAndAchievements() {

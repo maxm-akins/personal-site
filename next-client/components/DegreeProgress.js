@@ -1,26 +1,12 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import styles from '../styles/index.module.css';
-import { Box, Grid, Button, Paper, Accordion, AccordionSummary, AccordionDetails, Typography, Alert, useMediaQuery, Tab, Tabs, CustomTabPanel, useRadioGroup, collapseClasses, Icon } from '@mui/material';
+
+import { Box, Grid, Paper, Accordion, AccordionSummary, AccordionDetails, Typography, Alert, useMediaQuery, Icon } from '@mui/material';
 import { useTheme } from '@emotion/react';
-import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
-import { headers } from 'next/dist/client/components/headers';
-import axios from "axios";
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-
-
 
 
 
 export default function DegreeProgress({ classes }) {
     const theme = useTheme();
     const terms = ["Fall 2023-2024", "Spring 2022-2023", "Fall 2022-2023", "Spring 2021-2022", "Fall 2021-2022"]
-    let showCollapse = useMediaQuery(theme.breakpoints.up('md'))
-
-
 
     return (
         <>

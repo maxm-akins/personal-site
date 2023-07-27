@@ -1,11 +1,10 @@
 
-import { Divider, Slide, useMediaQuery, List, ListItem, ListItemText, ListItemButton, ListItemIcon, Box, AppBar, Button, Icon, IconButton, Toolbar, Typography } from '@mui/material';
+import { Divider, useMediaQuery, List, ListItem, ListItemButton, ListItemIcon, Box, Icon, IconButton, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import { useRouter } from 'next/router'
-import { useEffect, useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
-import Link from 'next/link';
 
 
 export default function NavBar({ children, home }) {

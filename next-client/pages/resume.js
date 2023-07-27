@@ -1,15 +1,8 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import styles from '../styles/index.module.css';
-import { Box, Grid, Paper, Typography, useMediaQuery, Tab, Tabs, CustomTabPanel, useRadioGroup } from '@mui/material';
+import { Box, Typography, useMediaQuery, Tab, Tabs } from '@mui/material';
 import { useTheme } from '@emotion/react';
-import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
-import { headers } from 'next/dist/client/components/headers';
 import axios from "axios"
 
-
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import WorkExperience from '../components/WorkExperience';
@@ -146,14 +139,10 @@ export default function resume({ exps, projs, classes }) {
                 </Box>
 
 
-
-
                 { tab === 0 && (<WorkExperience exps={ exps } />) }
                 { tab === 1 && (<Projects projs={ projs } />) }
                 { tab === 2 && (<DegreeProgress classes={ classes } />) }
                 { tab === 3 && (<SkillsAndAchievements />) }
-
-
 
             </Box >
 

@@ -1,18 +1,14 @@
 
-import { Divider, Slide, useMediaQuery, List, Grid, ListItem, ListItemText, ListItemButton, ListItemIcon, Box, AppBar, Button, Icon, IconButton, Toolbar, Typography } from '@mui/material';
+import { Grid, Box, IconButton, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import { useRouter } from 'next/router'
-import { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
-import Image from 'next/image';
+
 
 
 export default function Footer({ children, home }) {
     const router = useRouter()
     const theme = useTheme();
-    const [showMenu, setShowMenu] = useState(false);
-    const [showCollapseMenu, setShowCollapseMenu] = useState(false);
-    let showCollapse = useMediaQuery(theme.breakpoints.up('md'))
+
 
     return (
         <>
@@ -203,7 +199,7 @@ export default function Footer({ children, home }) {
                                 justifyContent: "end"
                             } }
                         >
-                            <img src='/images/MA_logo_alt.png' style={ { maxHeight: 60, } } />
+                            <img src='/images/MA_logo_alt4_small.png' style={ { maxHeight: 60, } } />
 
                         </Box>
 

@@ -1,18 +1,12 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import styles from '../styles/index.module.css';
 import { Box, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 
 
-
-
 export default function Home({ allPostsData }) {
   const theme = useTheme();
-
-
 
   return (
     <>
