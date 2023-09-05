@@ -110,9 +110,8 @@ export default function aboutMe() {
                         } }
                     >
 
-                        I went to high school in Littlestown, PA. (Yes, thats what its actually called. And yes, it was little.)
-                        Throughout high school I was a member of Future Business Leaders of America where I served as Reporter and President of our local chapter. Additionally,
-                        I was captain of our football team. I graduated as Valedictorian in 2021.
+                        I went to high school in Littlestown, PA. (Yes, that's what it's called. And yes, it was little.) Throughout high school, I was a Future Business Leaders of America member, also serving as Reporter and President of our local chapter. Additionally, I was captain of our football team. I graduated as Valedictorian in 2021.
+
 
 
                     </Grid>
@@ -155,10 +154,8 @@ export default function aboutMe() {
                             position: "relative",
                         } }
                     >
+                        I am enrolled at the University of Pittsburgh - Main Campus as a Computer Science major (please don't hold that against my social skills). I have an intended graduation date in the Spring of 2025. I currently have a GPA of 3.9 and have made the School of Computing and Information's Dean's List in all four of my semesters at Pitt.
 
-                        I am currently enrolled at the University of Pittsburgh - Main Campus as a Computer Science major (please don't hold that against my social skills). I have an
-                        intended graduation date in Spring of 2025.  I currently have a GPA of 3.9 and have made the School of Computing and Information's Dean's List
-                        in all four of my semesters at Pitt.
 
                     </Grid>
                     <Grid item xs={ 12 }
@@ -278,8 +275,7 @@ export default function aboutMe() {
                                 mt: 1
 
                             } }>
-                            I built my first computer during my freshman year of high school and have been upgrading and rebuilding it ever since.
-                        </Typography>
+                            I built my first computer during my freshman year of high school and have been upgrading and rebuilding it ever since.                        </Typography>
                     </Grid>
 
                 </Grid>

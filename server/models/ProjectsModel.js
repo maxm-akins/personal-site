@@ -10,6 +10,10 @@ const ProjectsSchema = new Schema({
         type: String,
         required: false,
     },
+    webLink: {
+        type: String,
+        required: false,
+    },
     details: {
         type: String,
         required: true,

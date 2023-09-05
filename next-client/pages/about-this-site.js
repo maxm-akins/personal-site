@@ -73,10 +73,9 @@ export default function aboutThisSite() {
                         } }
                     >
 
-                        Before you say anything, I know that this entire app could've been delieverd via a static site on GitHub Pages
-                        and it would've taken me one fourth of the time. I know that... <br></br> <br></br> However, I wanted to fully demostrate what I was
-                        capabable of building despite this being just a selfish, self-promting, and rarely changing website. So rather than
-                        make it very simple and to the point, here are all of the various pieces that hold this website together.
+
+                        Before you say anything, this entire app could've been delivered via a static site on GitHub Pages, and it would've taken me one-fourth of the time. I know that...
+                        However, I wanted to fully demonstrate what I could build despite this being a selfish, self-promoting, and rarely changing website. So, rather than make it very simple and to the point, here are the various pieces that hold this website together.
 
 
                     </Grid>
@@ -116,14 +115,7 @@ export default function aboutThisSite() {
                         } }
                     >
 
-                        Next.js was used as the primary framework for the development of this site.
-                        As Next continues to flex it's power and potential in the web development world,
-                        it was my wish to demostrate my ability to effectively use and benefit from the framework.
-                        Across the site, you will encouter (although you may not notice) different inclusions of
-                        Next.js features. These range from pre-rendering like static generation (this page you happen to be on)
-                        and server-side rendering, to client-side rendering. However, I am not even close to having a full
-                        comprehension of the wide scope of Next.js resources and continue to learn and update this site as I go.
-
+                        Next.js was used as the primary framework for the development of this site. As Next continues to flex its power and potential in the web development world, it was my wish to demonstrate my ability to use and benefit from the framework effectively. Across the site, you will encounter (although you may not notice) different inclusions of Next.js features. These range from pre-rendering like static generation (this page you happen to be on), server-side rendering, and client-side rendering. However, I am still far from fully comprehending the broad scope of Next.js resources, and I will continue to learn and update this site as I go.
 
                     </Grid>
                     <Grid item xs={ 12 }
@@ -164,11 +156,7 @@ export default function aboutThisSite() {
                         } }
                     >
 
-                        To contruct the visually appealing front-end that you are viewing now,
-                        I utilized the Material UI libarary of React components. Framer Animation was
-                        also used to include attractive animations. While implementing these libaries, I kept
-                        responsiveness in mind, and you should find a comfortable viewing experience no
-                        matter the size of your screen (feel free to test it out).
+                        I utilized the Material UI library of React components to construct the visually appealing front-end you are viewing now. Framer Animation was also used to include attractive animations. While implementing these libraries, I kept responsiveness in mind, and you should find a comfortable viewing experience no matter the size of your screen (feel free to test it out).
                     </Grid>
                     <Grid item xs={ 12 }
                         sx={ {
@@ -209,9 +197,8 @@ export default function aboutThisSite() {
                         } }
                     >
 
-                        Although, Next.js provides its own API service, I am still partial to using a
-                        completely private and seperate backend server for my apps. To accomplish this I used Node.js
-                        alongside Express.js and mongoDB as the primary and notable additions.
+                        Although Next.js provides its own API service, I am still partial to using a private and separate backend for my apps. I used Node.js alongside Express.js and MongoDB as the primary and notable additions to accomplish this.
+
                     </Grid>
 
                     <Grid item xs={ 12 }
@@ -259,11 +246,7 @@ export default function aboutThisSite() {
                         } }
                     >
 
-                        To host this site for all to see, I have used the following technologies. Most importantly, I am using
-                        an AWS EC2 Ubuntu instance to host my servers. NGINX is acting as my reverse proxy and web server as it
-                        can be configured to play well with Next.js. I used PM2 to process manage my servers and keep them running
-                        in the event of crashes and/or unexpected shutdowns. Finally, Certbot was used as a way to earn an SSH Certificate
-                        and to make my site accessible only via HTTPS.
+                        I have used the following technologies to host this site for all to see. Most importantly, I host my servers using an AWS EC2 Ubuntu instance. NGINX is my reverse proxy and web server, which can be configured to play well with Next.js. I used PM2 to process-manage my servers and keep them running during crashes or unexpected shutdowns. Finally, Certbot was used to earn an SSH Certificate and make my site accessible only via HTTPS.
                     </Grid>
 
 

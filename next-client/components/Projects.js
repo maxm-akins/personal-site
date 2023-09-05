@@ -17,7 +17,9 @@ export default function Projects({ projs }) {
                 } }
             >
                 <Grid container spacing={ 2 }
-                    alignItems="stretch"
+                    sx={ {
+                        alignItems: "stretch",
+                    } }
                 >
                     { projs.map((item) => {
 
@@ -29,7 +31,8 @@ export default function Projects({ projs }) {
                                         height: "100%",
                                         display: "flex",
                                         flexWrap: "wrap",
-                                        alignItems: "flex-start"
+                                        alignItems: "flex-start",
+                                        alignContent: "flex-start"
                                     } }
                                 >
                                     <Typography
@@ -41,6 +44,30 @@ export default function Projects({ projs }) {
                                         } }
                                     >
                                         { item.name }
+
+                                    </Typography>
+
+
+                                    <Typography
+                                        sx={ {
+                                            width: "100%",
+                                            fontSize: 15,
+                                            fontWeight: 500,
+                                            color: theme.palette.primary.main,
+                                            mb: 2,
+                                            "&:hover": {
+                                                color: theme.palette.primary.secondary
+                                            }
+
+                                        } }
+                                        onClick={ () => {
+                                            if (item.webLink) window.open(item.webLink, '_blank')
+                                            else return;
+                                        } }
+                                    >
+                                        { (item.webLink) ? "Website Link" : "Cannot Share Link" }
+
+
 
                                     </Typography>
 
