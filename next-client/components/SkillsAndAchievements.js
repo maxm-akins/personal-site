@@ -55,7 +55,7 @@ export default function SkillsAndAchievements() {
                             width: "100%"
                         } }
                     >
-                        Achieved the required grade status to earn a spot on the University of Pittsburgh’s School of Computing and Information's Dean's List in all four of my semesters                    </Typography>
+                        Achieved the required grade status to earn a spot on the University of Pittsburgh’s School of Computing and Information's Dean's List in all five of my semesters                    </Typography>
 
                 </Box>
 
