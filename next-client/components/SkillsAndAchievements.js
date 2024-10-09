@@ -2,6 +2,7 @@
 import { Box, Grid, Divider, Tooltip, Typography, Icon } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import Image from 'next/image'
+import react from '../public/icons/reactjs.png'
 
 export default function SkillsAndAchievements() {
     const theme = useTheme();
@@ -27,32 +28,31 @@ export default function SkillsAndAchievements() {
                 >
                     Technical Skills
                 </Typography>
-                {/* 
+
                 <Grid container spacing={5} sx={{ mb: 2 }}>
 
                     <Tooltip title="C">
                         <Grid item xs={4} md={3} lg={2}>
-                            <Image
+                            <img
                                 src="/icons/c-logo.png"
-                                width={100}
-                                height={100}
+
                             />
                         </Grid>
                     </Tooltip>
 
                     <Tooltip title="Java">
                         <Grid item xs={4} md={3} lg={2}>
-                            <Image
+                            <img
                                 src="/icons/java.svg"
-                                width={100}
                                 height={100}
+
                             />
                         </Grid>
                     </Tooltip>
 
                     <Tooltip title="Python">
                         <Grid item xs={4} md={3} lg={2}>
-                            <Image
+                            <img
                                 src="/icons/python.png"
                                 width={100}
                                 height={100}
@@ -129,7 +129,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="React.js">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/reactjs.png"
+                                src={react}
                                 width={100}
                                 height={90}
                             />
@@ -274,7 +274,7 @@ export default function SkillsAndAchievements() {
 
 
 
-                </Grid> */}
+                </Grid>
 
                 <Divider sx={{ mb: 2, mt: 2 }} />
 
