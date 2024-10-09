@@ -2,7 +2,7 @@
 import { Box, Grid, Divider, Tooltip, Typography, Icon } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import Image from 'next/image'
-import react from '../public/icons/reactjs.png'
+import react from '/public/icons/reactjs.png'
 
 export default function SkillsAndAchievements() {
     const theme = useTheme();
@@ -31,7 +31,7 @@ export default function SkillsAndAchievements() {
 
                 <Grid container spacing={5} sx={{ mb: 2 }}>
 
-                    <Tooltip title="C">
+                    {/* <Tooltip title="C">
                         <Grid item xs={4} md={3} lg={2}>
                             <img
                                 src="/icons/c-logo.png"
@@ -123,7 +123,7 @@ export default function SkillsAndAchievements() {
                                 height={100}
                             />
                         </Grid>
-                    </Tooltip>
+                    </Tooltip> */}
 
 
                     <Tooltip title="React.js">
@@ -137,7 +137,7 @@ export default function SkillsAndAchievements() {
                     </Tooltip>
 
 
-                    <Tooltip title="Node.js">
+                    {/* <Tooltip title="Node.js">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
                                 src="/icons/node.png"
@@ -265,7 +265,7 @@ export default function SkillsAndAchievements() {
                                 height={100}
                             />
                         </Grid>
-                    </Tooltip>
+                    </Tooltip> */}
 
 
 
