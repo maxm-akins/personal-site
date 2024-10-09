@@ -6,47 +6,47 @@ import { useTheme } from '@emotion/react';
 
 export default function DegreeProgress({ classes }) {
     const theme = useTheme();
-    const terms = ["Spring 2023-2024", "Fall 2023-2024", "Spring 2022-2023", "Fall 2022-2023", "Spring 2021-2022", "Fall 2021-2022"]
+    const terms = ["Fall 2024-2025", "Spring 2023-2024", "Fall 2023-2024", "Spring 2022-2023", "Fall 2022-2023", "Spring 2021-2022", "Fall 2021-2022"]
 
     return (
         <>
             <Box
-                sx={ {
+                sx={{
                     mt: 2
-                } }
+                }}
             >
 
                 <Box>
                     <Grid container
-                        sx={ {
+                        sx={{
                             mb: 2
-                        } }
+                        }}
                     >
-                        <Grid item xs={ 12 } md={ 6 }>
+                        <Grid item xs={12} md={6}>
                             <Typography
-                                sx={ {
+                                sx={{
                                     fontSize: 40,
                                     fontWeight: 400,
                                     color: theme.palette.primary.char
-                                } }
+                                }}
                             >
 
                                 Current GPA: <strong> 3.9</strong>
                             </Typography>
 
                         </Grid>
-                        <Grid item xs={ 12 } md={ 6 }>
+                        <Grid item xs={12} md={6}>
                             <Typography
-                                align={ useMediaQuery(theme.breakpoints.up('md')) ? "right" : "left" }
-                                sx={ {
+                                align={useMediaQuery(theme.breakpoints.up('md')) ? "right" : "left"}
+                                sx={{
                                     width: "100%",
                                     fontSize: 40,
                                     fontWeight: 400,
                                     color: theme.palette.primary.char
-                                } }
+                                }}
                             >
 
-                                Current Year: <strong> Junior </strong>
+                                Current Year: <strong> Senior </strong>
                             </Typography>
 
                         </Grid>
@@ -58,93 +58,93 @@ export default function DegreeProgress({ classes }) {
 
 
 
-                { terms.map((term) => {
+                {terms.map((term) => {
 
                     return (
 
-                        <Accordion TransitionProps={ { unmountOnExit: true } } >
+                        <Accordion TransitionProps={{ unmountOnExit: true }} >
                             <AccordionSummary
-                                expandIcon={ <Icon className='material-symbols-outlined' sx={ { fontSize: 50, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 48;" } }  >arrow_drop_down</Icon> }
+                                expandIcon={<Icon className='material-symbols-outlined' sx={{ fontSize: 50, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 48;" }}  >arrow_drop_down</Icon>}
                                 aria-controls="panel2a-content"
                                 id="panel2a-header"
                             >
-                                <Typography>{ term }</Typography>
+                                <Typography>{term}</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                { classes?.map((item) => {
+                                {classes?.map((item) => {
 
                                     if (item.term === term) {
 
                                         return (
 
-                                            <Paper elevation={ 8 }
-                                                sx={ {
+                                            <Paper elevation={8}
+                                                sx={{
                                                     p: 2,
                                                     mb: 2
-                                                } }
+                                                }}
                                             >
                                                 <Grid container>
-                                                    <Grid item xs={ 8 }
-                                                        sx={ {
+                                                    <Grid item xs={8}
+                                                        sx={{
                                                             display: "flex",
                                                             flexWrap: "wrap",
                                                             alignItems: "center"
-                                                        } }
+                                                        }}
                                                     >
                                                         <Typography
-                                                            sx={ {
+                                                            sx={{
                                                                 fontSize: 30,
                                                                 fontWeight: 500,
                                                                 color: theme.palette.primary.char,
                                                                 mr: 1,
-                                                            } }
+                                                            }}
                                                         >
-                                                            { item.name }
+                                                            {item.name}
 
 
                                                         </Typography>
                                                         <Typography
-                                                            sx={ {
+                                                            sx={{
                                                                 color: theme.palette.primary.char,
-                                                            } }
+                                                            }}
                                                         >
-                                                            { item.code }
+                                                            {item.code}
                                                         </Typography>
                                                         <Typography
-                                                            sx={ {
+                                                            sx={{
                                                                 color: theme.palette.primary.main,
                                                                 width: "100%"
-                                                            } }
+                                                            }}
                                                         >
-                                                            Final Grade: { item.grade }
+                                                            Final Grade: {item.grade}
 
                                                         </Typography>
 
                                                     </Grid>
-                                                    <Grid item xs={ 4 }>
+                                                    <Grid item xs={4}>
                                                         <Typography
                                                             align='right'
-                                                            sx={ {
+                                                            sx={{
                                                                 fontSize: 15,
                                                                 mt: 1,
-                                                            } }
+                                                            }}
 
                                                         >
 
-                                                            { item.term }
+                                                            {item.term}
                                                         </Typography>
                                                     </Grid>
-                                                    <Grid item xs={ 12 }
-                                                        sx={ {
+                                                    <Grid item xs={12}
+                                                        sx={{
                                                             mt: 3
-                                                        } }
+                                                        }}
                                                     >
 
                                                         <Alert
-                                                            sx={ {
+                                                            sx={{
                                                                 mb: 2
 
-                                                            } }
+                                                            }}
                                                             severity="info"
                                                         >
                                                             The following language was taken directly from the University of Pittsburgh's website.
@@ -153,11 +153,11 @@ export default function DegreeProgress({ classes }) {
 
                                                         <Typography
                                                             align='left'
-                                                            sx={ {
+                                                            sx={{
                                                                 fontSize: 15,
-                                                            } }
+                                                            }}
                                                         >
-                                                            { item.details }
+                                                            {item.details}
 
                                                         </Typography>
                                                     </Grid>
@@ -174,7 +174,7 @@ export default function DegreeProgress({ classes }) {
                         </Accordion>
 
                     )
-                }) }
+                })}
 
             </Box >
 

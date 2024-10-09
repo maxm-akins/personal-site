@@ -16,7 +16,7 @@ export default function aboutMe() {
 
 
             <Box
-                sx={ {
+                sx={{
                     transition: "all 1s",
                     height: "100%",
                     width: "100%",
@@ -25,13 +25,13 @@ export default function aboutMe() {
                     pb: 5
 
 
-                } }
+                }}
             >
 
 
                 <Typography
                     align='left'
-                    sx={ {
+                    sx={{
                         // background: `linear-gradient(110deg, ${theme.palette.primary.main} , ${theme.palette.primary.secondary} )`,
                         // backgroundClip: "text",
                         width: "100%",
@@ -40,47 +40,47 @@ export default function aboutMe() {
                         fontWeight: 900,
                         fontSize: 60,
                         mb: 2
-                    } }
+                    }}
                 >
                     About Maxm
                 </Typography>
 
 
 
-                <Grid container spacing={ 2 }>
+                <Grid container spacing={2}>
 
 
 
-                    <Grid item xs={ 12 }
-                        sx={ {
+                    <Grid item xs={12}
+                        sx={{
                             display: "flex",
                             position: "relative",
-                        } }
+                        }}
                     >
                         <Typography
-                            sx={ {
+                            sx={{
                                 fontSize: 30,
                                 fontWeight: 900
-                            } }>
+                            }}>
                             High School:
 
                         </Typography>
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }
+                    <Grid item xs={12} md={6}
                     >
 
                         <img src="/images/grad.jpg"
 
                         />
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }
+                    <Grid item xs={12} md={6}
                     >
 
                         <img src="/images/momHoco.jpg"
 
                         />
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }
+                    <Grid item xs={12} md={6}
 
                     >
 
@@ -88,12 +88,12 @@ export default function aboutMe() {
 
                         />
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }
-                        sx={ {
+                    <Grid item xs={12} md={6}
+                        sx={{
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center"
-                        } }
+                        }}
                     >
 
                         <img src="/images/fblaLogo.png"
@@ -102,12 +102,12 @@ export default function aboutMe() {
                     </Grid>
 
 
-                    <Grid item xs={ 12 }
-                        sx={ {
+                    <Grid item xs={12}
+                        sx={{
                             display: "flex",
 
                             position: "relative",
-                        } }
+                        }}
                     >
 
                         I went to high school in Littlestown, PA. (Yes, that's what it's called. And yes, it was little.) Throughout high school, I was a Future Business Leaders of America member, also serving as Reporter and President of our local chapter. Additionally, I was captain of our football team. I graduated as Valedictorian in 2021.
@@ -115,23 +115,23 @@ export default function aboutMe() {
 
 
                     </Grid>
-                    <Grid item xs={ 12 }
-                        sx={ {
+                    <Grid item xs={12}
+                        sx={{
                             display: "flex",
 
                             position: "relative",
-                        } }
+                        }}
                     >
                         <Typography
-                            sx={ {
+                            sx={{
                                 fontSize: 30,
                                 fontWeight: 900
-                            } }>
+                            }}>
                             College:
 
                         </Typography>
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }
+                    <Grid item xs={12} md={6}
 
                     >
 
@@ -139,7 +139,7 @@ export default function aboutMe() {
 
                         />
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }
+                    <Grid item xs={12} md={6}
 
                     >
 
@@ -147,52 +147,52 @@ export default function aboutMe() {
 
                         />
                     </Grid>
-                    <Grid item xs={ 12 }
-                        sx={ {
+                    <Grid item xs={12}
+                        sx={{
                             display: "flex",
 
                             position: "relative",
-                        } }
+                        }}
                     >
-                        I am enrolled at the University of Pittsburgh - Main Campus as a Computer Science major (please don't hold that against my social skills). I have an intended graduation date in the Spring of 2025. I currently have a GPA of 3.9 and have made the School of Computing and Information's Dean's List in all four of my semesters at Pitt.
+                        I am enrolled at the University of Pittsburgh - Main Campus as a Computer Science major (please don't hold that against my social skills). I have an intended graduation date in the Spring of 2025. I currently have a GPA of 3.9 and have made the School of Computing and Information's Dean's List in all six of my semesters at Pitt.
 
 
                     </Grid>
-                    <Grid item xs={ 12 }
-                        sx={ {
+                    <Grid item xs={12}
+                        sx={{
                             display: "flex",
 
                             position: "relative",
-                        } }
+                        }}
                     >
                         <Typography
-                            sx={ {
+                            sx={{
                                 fontSize: 30,
                                 fontWeight: 900
-                            } }>
+                            }}>
                             Interests:
 
                         </Typography>
                     </Grid>
 
-                    <Grid item xs={ 12 }
-                        sx={ {
+                    <Grid item xs={12}
+                        sx={{
                             display: "flex",
 
                             position: "relative",
-                        } }
+                        }}
                     >
                         <Typography
-                            sx={ {
+                            sx={{
                                 fontSize: 20,
                                 fontWeight: 700
-                            } }>
+                            }}>
                             - Pittsburgh Sports (all of them)
                         </Typography>
 
 
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }
+                    <Grid item xs={12} md={6}
 
                     >
 
@@ -200,7 +200,7 @@ export default function aboutMe() {
 
                         />
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }
+                    <Grid item xs={12} md={6}
 
                     >
 
@@ -212,69 +212,69 @@ export default function aboutMe() {
 
 
 
-                    <Grid item xs={ 12 }
-                        sx={ {
+                    <Grid item xs={12}
+                        sx={{
                             display: "flex",
 
                             position: "relative",
-                        } }
+                        }}
                     >
                         <Typography
-                            sx={ {
+                            sx={{
                                 fontSize: 20,
                                 fontWeight: 700
-                            } }>
+                            }}>
                             - Friends
                         </Typography>
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }>
+                    <Grid item xs={12} md={6}>
                         <img src="/images/friends.jpg"
                         />
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }>
+                    <Grid item xs={12} md={6}>
                         <img src="/images/bus.jpg"
                         />
                         <Typography
-                            sx={ {
+                            sx={{
                                 fontSize: 15,
                                 fontWeight: 500,
                                 mt: 1
-                            } }>
+                            }}>
                             ^ my best friend
                         </Typography>
                     </Grid>
 
 
 
-                    <Grid item xs={ 12 }
-                        sx={ {
+                    <Grid item xs={12}
+                        sx={{
                             display: "flex",
 
                             position: "relative",
-                        } }
+                        }}
                     >
                         <Typography
-                            sx={ {
+                            sx={{
                                 fontSize: 20,
                                 fontWeight: 700
-                            } }>
+                            }}>
                             - Anything technology
                         </Typography>
 
 
                     </Grid>
-                    <Grid item xs={ 12 }   >
+                    <Grid item xs={12}   >
 
                         <img src="/images/pc.jpg"
 
                         />
                         <Typography
-                            sx={ {
+                            sx={{
                                 fontSize: 15,
                                 fontWeight: 500,
                                 mt: 1
 
-                            } }>
+                            }}>
                             I built my first computer during my freshman year of high school and have been upgrading and rebuilding it ever since.                        </Typography>
                     </Grid>
 
