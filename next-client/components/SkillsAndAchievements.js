@@ -27,7 +27,7 @@ export default function SkillsAndAchievements() {
                 >
                     Technical Skills
                 </Typography>
-
+                {/* 
                 <Grid container spacing={5} sx={{ mb: 2 }}>
 
                     <Tooltip title="C">
@@ -274,7 +274,7 @@ export default function SkillsAndAchievements() {
 
 
 
-                </Grid>
+                </Grid> */}
 
                 <Divider sx={{ mb: 2, mt: 2 }} />
 
