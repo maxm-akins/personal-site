@@ -2,6 +2,20 @@ import Head from 'next/head';
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@emotion/react';
 
+
+import grad from '/public/images/grad.png'
+import momHoco from '/public/images/momHoco.png'
+import football2 from '/public/images/football2.png'
+import fblaLogo from '/public/images/fblaLogo.png'
+import pittMoveIn from '/public/images/pittMoveIn.png'
+import pitt2 from '/public/images/pitt2.png'
+import steelers from '/public/images/steelers.png'
+import peach from '/public/images/peach.png'
+import friends from '/public/images/friends.png'
+import bus from '/public/images/bus.png'
+import pc from '/public/images/pc.png'
+
+
 export default function aboutMe() {
     const theme = useTheme();
     let expand = useMediaQuery(theme.breakpoints.down('md'))

@@ -2,7 +2,30 @@
 import { Box, Grid, Divider, Tooltip, Typography, Icon } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import Image from 'next/image'
+import c from '/public/icons/c-logo.png'
+import java from '/public/icons/java.svg'
+import python from '/public/icons/python.png'
+import csharp from '/public/icons/csharp.svg'
+import js from '/public/icons/js.svg'
+import go from '/public/icons/go.png'
+import dart from '/public/icons/dart.png'
+import html from '/public/icons/html.png'
+import css from '/public/icons/css.png'
 import react from '/public/icons/reactjs.png'
+import node from '/public/icons/node.png'
+import next from '/public/icons/next.png'
+import angular from '/public/icons/angular.png'
+import express from '/public/icons/express.png'
+import fastapi from '/public/icons/fastapi.svg'
+import flutter from '/public/icons/flutter.png'
+import dotnet from '/public/icons/dotnet.png'
+import mongo from '/public/icons/mongo.png'
+import git from '/public/icons/git.png'
+import aws from '/public/icons/aws.png'
+import ocean from '/public/icons/ocean.png'
+import ps from '/public/icons/ps.png'
+
+
 
 export default function SkillsAndAchievements() {
     const theme = useTheme();
@@ -14,9 +37,6 @@ export default function SkillsAndAchievements() {
                     mt: 2
                 }}
             >
-
-
-
 
                 <Typography
                     sx={{
@@ -31,29 +51,30 @@ export default function SkillsAndAchievements() {
 
                 <Grid container spacing={5} sx={{ mb: 2 }}>
 
-                    {/* <Tooltip title="C">
+                    <Tooltip title="C">
                         <Grid item xs={4} md={3} lg={2}>
-                            <img
-                                src="/icons/c-logo.png"
-
+                            <Image
+                                src={c}
+                                width={90}
+                                height={90}
                             />
                         </Grid>
                     </Tooltip>
 
                     <Tooltip title="Java">
                         <Grid item xs={4} md={3} lg={2}>
-                            <img
-                                src="/icons/java.svg"
+                            <Image
+                                src={java}
+                                width={100}
                                 height={100}
-
                             />
                         </Grid>
                     </Tooltip>
 
                     <Tooltip title="Python">
                         <Grid item xs={4} md={3} lg={2}>
-                            <img
-                                src="/icons/python.png"
+                            <Image
+                                src={python}
                                 width={100}
                                 height={100}
                             />
@@ -63,7 +84,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="C#">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/csharp.svg"
+                                src={csharp}
                                 width={100}
                                 height={100}
                             />
@@ -74,7 +95,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Javascript">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/js.svg"
+                                src={js}
                                 width={100}
                                 height={100}
                             />
@@ -85,7 +106,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Go">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/go.png"
+                                src={go}
                                 width={100}
                                 height={100}
                             />
@@ -96,7 +117,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Dart">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/dart.png"
+                                src={dart}
                                 width={100}
                                 height={60}
                             />
@@ -107,7 +128,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="HTML">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/html.png"
+                                src={html}
                                 width={100}
                                 height={100}
                             />
@@ -118,12 +139,12 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="CSS">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/css.png"
+                                src={css}
                                 width={100}
                                 height={100}
                             />
                         </Grid>
-                    </Tooltip> */}
+                    </Tooltip>
 
 
                     <Tooltip title="React.js">
@@ -131,16 +152,16 @@ export default function SkillsAndAchievements() {
                             <Image
                                 src={react}
                                 width={100}
-                                height={90}
+                                height={80}
                             />
                         </Grid>
                     </Tooltip>
 
 
-                    {/* <Tooltip title="Node.js">
+                    <Tooltip title="Node.js">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/node.png"
+                                src={node}
                                 width={100}
                                 height={100}
                             />
@@ -151,7 +172,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Next.js">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/next.png"
+                                src={next}
                                 width={100}
                                 height={70}
                             />
@@ -162,7 +183,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Angular.js">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/angular.png"
+                                src={angular}
                                 width={100}
                                 height={100}
                             />
@@ -173,7 +194,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Express.js">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/express.png"
+                                src={express}
                                 width={100}
                                 height={100}
                             />
@@ -184,7 +205,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="FastAPI">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/fastapi.svg"
+                                src={fastapi}
                                 width={100}
                                 height={100}
                             />
@@ -195,7 +216,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Flutter">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/flutter.png"
+                                src={flutter}
                                 width={100}
                                 height={100}
                             />
@@ -205,7 +226,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="C# Dotnet">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/dotnet.png"
+                                src={dotnet}
                                 width={100}
                                 height={100}
                             />
@@ -216,7 +237,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="MongoDB">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/mongo.png"
+                                src={mongo}
                                 width={100}
                                 height={100}
                             />
@@ -227,7 +248,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Git">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/git.png"
+                                src={git}
                                 width={100}
                                 height={100}
                             />
@@ -238,7 +259,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="AWS">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/aws.png"
+                                src={aws}
                                 width={100}
                                 height={80}
                             />
@@ -249,7 +270,7 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Digital Ocean">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/ocean.png"
+                                src={ocean}
                                 width={100}
                                 height={100}
                             />
@@ -260,12 +281,12 @@ export default function SkillsAndAchievements() {
                     <Tooltip title="Adobe Photoshop">
                         <Grid item xs={4} md={3} lg={2}>
                             <Image
-                                src="/icons/ps.png"
+                                src={ps}
                                 width={100}
                                 height={100}
                             />
                         </Grid>
-                    </Tooltip> */}
+                    </Tooltip>
 
 
 
