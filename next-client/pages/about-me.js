@@ -243,7 +243,7 @@ export default function aboutMe() {
                         </Typography>
                     </Grid>
                     <Grid item xs={ 12 } md={ 6 }>
-                        <img src="/images/friends.jpg"
+                        <img src="/images/friends2.jpg"
                         />
                     </Grid>
                     <Grid item xs={ 12 } md={ 6 }>

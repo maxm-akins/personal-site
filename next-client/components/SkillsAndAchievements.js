@@ -33,257 +33,257 @@ export default function SkillsAndAchievements() {
     return (
         <>
             <Box
-                sx={{
+                sx={ {
                     mt: 2
-                }}
+                } }
             >
 
                 <Typography
-                    sx={{
+                    sx={ {
                         fontSize: 40,
                         fontWeight: 900,
                         color: theme.palette.primary.char,
                         mb: 2
-                    }}
+                    } }
                 >
                     Technical Skills
                 </Typography>
 
-                <Grid container spacing={5} sx={{ mb: 2 }}>
+                <Grid container spacing={ 5 } sx={ { mb: 2 } }>
 
                     <Tooltip title="C">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={c}
-                                width={90}
-                                height={90}
+                                src={ c }
+                                width={ 90 }
+                                height={ 90 }
                             />
                         </Grid>
                     </Tooltip>
 
                     <Tooltip title="Java">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={java}
-                                width={100}
-                                height={100}
+                                src={ java }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
                     <Tooltip title="Python">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={python}
-                                width={100}
-                                height={100}
+                                src={ python }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
                     <Tooltip title="C#">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={csharp}
-                                width={100}
-                                height={100}
+                                src={ csharp }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Javascript">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={js}
-                                width={100}
-                                height={100}
+                                src={ js }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Go">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={go}
-                                width={100}
-                                height={100}
+                                src={ go }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Dart">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={dart}
-                                width={100}
-                                height={60}
+                                src={ dart }
+                                width={ 100 }
+                                height={ 60 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="HTML">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={html}
-                                width={100}
-                                height={100}
+                                src={ html }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="CSS">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={css}
-                                width={100}
-                                height={100}
+                                src={ css }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="React.js">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={react}
-                                width={100}
-                                height={80}
+                                src={ react }
+                                width={ 100 }
+                                height={ 80 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Node.js">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={node}
-                                width={100}
-                                height={100}
+                                src={ node }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Next.js">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={next}
-                                width={100}
-                                height={70}
+                                src={ next }
+                                width={ 100 }
+                                height={ 70 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Angular.js">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={angular}
-                                width={100}
-                                height={100}
+                                src={ angular }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Express.js">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={express}
-                                width={100}
-                                height={100}
+                                src={ express }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="FastAPI">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={fastapi}
-                                width={100}
-                                height={100}
+                                src={ fastapi }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Flutter">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={flutter}
-                                width={100}
-                                height={100}
+                                src={ flutter }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
                     <Tooltip title="C# Dotnet">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={dotnet}
-                                width={100}
-                                height={100}
+                                src={ dotnet }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="MongoDB">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={mongo}
-                                width={100}
-                                height={100}
+                                src={ mongo }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Git">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={git}
-                                width={100}
-                                height={100}
+                                src={ git }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="AWS">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={aws}
-                                width={100}
-                                height={80}
+                                src={ aws }
+                                width={ 100 }
+                                height={ 80 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Digital Ocean">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={ocean}
-                                width={100}
-                                height={100}
+                                src={ ocean }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
 
 
                     <Tooltip title="Adobe Photoshop">
-                        <Grid item xs={4} md={3} lg={2}>
+                        <Grid item xs={ 4 } md={ 3 } lg={ 2 }>
                             <Image
-                                src={ps}
-                                width={100}
-                                height={100}
+                                src={ ps }
+                                width={ 100 }
+                                height={ 100 }
                             />
                         </Grid>
                     </Tooltip>
@@ -297,183 +297,183 @@ export default function SkillsAndAchievements() {
 
                 </Grid>
 
-                <Divider sx={{ mb: 2, mt: 2 }} />
+                <Divider sx={ { mb: 2, mt: 2 } } />
 
 
                 <Typography
-                    sx={{
+                    sx={ {
                         fontSize: 40,
                         fontWeight: 900,
                         color: theme.palette.primary.char,
                         mb: 2,
                         mt: 3,
-                    }}
+                    } }
                 >
                     Soft Skills
                 </Typography>
 
 
 
-                <Grid container spacing={5} sx={{ mb: 2 }}>
+                <Grid container spacing={ 5 } sx={ { mb: 2 } }>
                     <Grid
                         item
-                        xs={6} md={6} lg={4}
-                        sx={{
+                        xs={ 6 } md={ 6 } lg={ 4 }
+                        sx={ {
                             display: "flex",
 
-                        }}>
-                        <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                        } }>
+                        <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
                         <Typography
-                            sx={{
+                            sx={ {
                                 fontSize: 20,
                                 fontWeight: 400,
                                 color: theme.palette.primary.main,
 
-                            }}
+                            } }
                         > Leadership </Typography>
 
                     </Grid>
                     <Grid
                         item
-                        xs={6} md={6} lg={4}
-                        sx={{
+                        xs={ 6 } md={ 6 } lg={ 4 }
+                        sx={ {
                             display: "flex",
 
-                        }}>
-                        <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                        } }>
+                        <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
                         <Typography
-                            sx={{
+                            sx={ {
                                 fontSize: 20,
                                 fontWeight: 400,
                                 color: theme.palette.primary.main,
 
-                            }}
+                            } }
                         > Teamwork </Typography>
 
                     </Grid>
                     <Grid
                         item
-                        xs={6} md={6} lg={4}
-                        sx={{
+                        xs={ 6 } md={ 6 } lg={ 4 }
+                        sx={ {
                             display: "flex",
 
-                        }}>
-                        <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                        } }>
+                        <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
                         <Typography
-                            sx={{
+                            sx={ {
                                 fontSize: 20,
                                 fontWeight: 400,
                                 color: theme.palette.primary.main,
 
-                            }}
+                            } }
                         > Fast-learner </Typography>
 
                     </Grid>
                     <Grid
                         item
-                        xs={6} md={6} lg={4}
-                        sx={{
+                        xs={ 6 } md={ 6 } lg={ 4 }
+                        sx={ {
                             display: "flex",
 
-                        }}>
-                        <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                        } }>
+                        <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
                         <Typography
-                            sx={{
+                            sx={ {
                                 fontSize: 20,
                                 fontWeight: 400,
                                 color: theme.palette.primary.main,
 
-                            }}
+                            } }
                         > Dedicated </Typography>
 
                     </Grid>
                     <Grid
                         item
-                        xs={6} md={6} lg={4}
-                        sx={{
+                        xs={ 6 } md={ 6 } lg={ 4 }
+                        sx={ {
                             display: "flex",
 
-                        }}>
-                        <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                        } }>
+                        <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
                         <Typography
-                            sx={{
+                            sx={ {
                                 fontSize: 20,
                                 fontWeight: 400,
                                 color: theme.palette.primary.main,
 
-                            }}
+                            } }
                         > Initiative </Typography>
 
                     </Grid>
                     <Grid
                         item
-                        xs={6} md={6} lg={4}
-                        sx={{
+                        xs={ 6 } md={ 6 } lg={ 4 }
+                        sx={ {
                             display: "flex",
 
-                        }}>
-                        <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                        } }>
+                        <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
                         <Typography
-                            sx={{
+                            sx={ {
                                 fontSize: 20,
                                 fontWeight: 400,
                                 color: theme.palette.primary.main,
 
-                            }}
+                            } }
                         > Adaptability </Typography>
 
                     </Grid>
                     <Grid
                         item
-                        xs={6} md={6} lg={4}
-                        sx={{
+                        xs={ 6 } md={ 6 } lg={ 4 }
+                        sx={ {
                             display: "flex",
 
-                        }}>
-                        <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                        } }>
+                        <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
                         <Typography
-                            sx={{
+                            sx={ {
                                 fontSize: 20,
                                 fontWeight: 400,
                                 color: theme.palette.primary.main,
 
-                            }}
+                            } }
                         > Problem-solving </Typography>
 
                     </Grid>
                     <Grid
                         item
-                        xs={6} md={6} lg={4}
-                        sx={{
+                        xs={ 6 } md={ 6 } lg={ 4 }
+                        sx={ {
                             display: "flex",
 
-                        }}>
-                        <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                        } }>
+                        <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
                         <Typography
-                            sx={{
+                            sx={ {
                                 fontSize: 20,
                                 fontWeight: 400,
                                 color: theme.palette.primary.main,
 
-                            }}
+                            } }
                         > Respect </Typography>
 
                     </Grid>
                     <Grid
                         item
-                        xs={6} md={6} lg={4}
-                        sx={{
+                        xs={ 6 } md={ 6 } lg={ 4 }
+                        sx={ {
                             display: "flex",
 
-                        }}>
-                        <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                        } }>
+                        <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
                         <Typography
-                            sx={{
+                            sx={ {
                                 fontSize: 20,
                                 fontWeight: 400,
                                 color: theme.palette.primary.main,
 
-                            }}
+                            } }
                         > Agile Workflow </Typography>
 
                     </Grid>
@@ -483,80 +483,80 @@ export default function SkillsAndAchievements() {
                 </Grid>
 
 
-                <Divider sx={{ mb: 2, mt: 2 }} />
+                <Divider sx={ { mb: 2, mt: 2 } } />
 
 
                 <Typography
-                    sx={{
+                    sx={ {
                         fontSize: 40,
                         fontWeight: 900,
                         color: theme.palette.primary.char,
                         mb: 1
-                    }}
+                    } }
                 >
                     Achievements
                 </Typography>
 
                 <Box
-                    sx={{
+                    sx={ {
                         display: "flex",
                         flexWrap: "wrap",
                         alignItems: "center",
                         mb: 2
-                    }}
+                    } }
                 >
-                    <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                    <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
 
                     <Typography
-                        sx={{
+                        sx={ {
                             fontSize: 20,
                             fontWeight: 400,
                             color: theme.palette.primary.main,
 
-                        }}
+                        } }
                     >
                         Dean's List
 
                     </Typography>
                     <Typography
-                        sx={{
+                        sx={ {
                             fontSize: 15,
                             fontWeight: 400,
                             color: theme.palette.primary.char,
                             width: "100%"
-                        }}
+                        } }
                     >
                         Achieved the required grade status to earn a spot on the University of Pittsburgh’s School of Computing and Information's Dean's List in all six of my semesters                    </Typography>
 
                 </Box>
 
                 <Box
-                    sx={{
+                    sx={ {
                         display: "flex",
                         flexWrap: "wrap",
                         alignItems: "center"
-                    }}
+                    } }
                 >
-                    <Icon className='material-symbols-outlined' sx={{ mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" }}  >radio_button_unchecked</Icon>
+                    <Icon className='material-symbols-outlined' sx={ { mr: 1, fontSize: 20, color: theme.palette.primary.main, fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;" } }  >radio_button_unchecked</Icon>
 
                     <Typography
-                        sx={{
+                        sx={ {
                             fontSize: 20,
                             fontWeight: 400,
                             color: theme.palette.primary.main,
 
-                        }}
+                        } }
                     >
                         Class of 2021 Valedictorian
 
                     </Typography>
                     <Typography
-                        sx={{
+                        sx={ {
                             fontSize: 15,
                             fontWeight: 400,
                             color: theme.palette.primary.char,
                             width: "100%"
-                        }}
+                        } }
                     >
                         Achieved the highest GPA of my graduating high school class
                     </Typography>
@@ -564,7 +564,7 @@ export default function SkillsAndAchievements() {
                 </Box>
 
 
-                <Divider sx={{ mb: 2, mt: 2 }} />
+                <Divider sx={ { mb: 2, mt: 2 } } />
 
 
             </Box >
