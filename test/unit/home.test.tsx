@@ -9,40 +9,15 @@ const Stub = createRoutesStub([
   {
     Component: App,
     ErrorBoundary,
-    children: [
-      {
-        index: true,
-        Component: Home,
-        loader: () => ({
-          work: [
-            {
-              id: 1,
-              companyName: "Acme",
-              companyLocation: "Remote",
-              title: "Engineer",
-              startDate: "2024",
-              endDate: "Present",
-              details: ["shipped things"],
-              sortOrder: 1,
-            },
-          ],
-          projects: [
-            { id: 1, name: "Thing", link: null, webLink: null, details: "a thing", sortOrder: 1 },
-          ],
-          skills: [{ id: 1, name: "TypeScript", category: "Languages", sortOrder: 1 }],
-        }),
-      },
-    ],
+    children: [{ index: true, Component: Home }],
   },
 ]);
 
-test("/ renders résumé data from the loader", async () => {
+test("/ renders the holding page heading", async () => {
   render(<Stub initialEntries={["/"]} />);
   expect(
-    await screen.findByRole("heading", { name: "Maxm Akins" }),
+    await screen.findByRole("heading", { name: "New site in progress" }),
   ).toBeInTheDocument();
-  expect(await screen.findByText(/Acme/)).toBeInTheDocument();
-  expect(screen.getByText("shipped things")).toBeInTheDocument();
 });
 
 test("unknown path hits the 404 boundary", async () => {
