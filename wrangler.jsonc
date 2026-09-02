@@ -4,5 +4,12 @@
   "main": "./workers/app.ts",
   "compatibility_date": "2025-10-08",
   "compatibility_flags": ["nodejs_compat"],
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  "d1_databases": [
+    {
+      "binding": "personal_site",
+      "database_name": "personal-site",
+      "database_id": "2ce244be-2cfe-430e-985f-499451feeeca"
+    }
+  ]
 }
