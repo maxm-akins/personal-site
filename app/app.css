@@ -104,3 +104,142 @@ body {
     animation: none;
   }
 }
+
+:root {
+  --text-base: 20px;
+  --text-lg: 30px;
+  --text-display: clamp(40px, 8vw, 68px);
+  --gutter: clamp(24px, 6vw, 64px);
+  --space-section: clamp(56px, 10vw, 76px);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: var(--accent-pressed);
+}
+
+.mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.hand {
+  font-family: "Caveat", "Comic Sans MS", cursive;
+}
+
+.lbl {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.sec-num {
+  font-family: "Caveat", "Comic Sans MS", cursive;
+  font-size: var(--text-lg);
+  line-height: 1;
+  color: var(--accent);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px var(--gutter);
+  background: var(--paper);
+  border-bottom: 1.5px solid var(--rule);
+}
+
+.nav-brand {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: var(--muted);
+  padding-bottom: 3px;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-links a.active {
+  color: var(--ink);
+  border-bottom: 2px solid var(--accent);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: var(--space-section);
+  padding: 56px var(--gutter);
+  border-top: 1.5px solid var(--rule);
+}
+
+.footer-sign {
+  font-family: "Caveat", "Comic Sans MS", cursive;
+  font-size: 26px;
+  color: var(--accent);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stub {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-section) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stub-title {
+  margin: 6px 0 0;
+  font-size: var(--text-display);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.stub-body {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.62;
+  color: var(--body);
+}
+
+.stub .hand {
+  font-size: 26px;
+  color: var(--accent);
+}
