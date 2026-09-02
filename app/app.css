@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+html,
+body {
+  @apply bg-sky-100 text-slate-900 dark:bg-slate-900 dark:text-slate-100;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+.cone {
+  animation: rr-bob 2.8s ease-in-out infinite alternate;
+}
+
+.chips {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rr-float 4s ease-in-out infinite alternate;
+}
+
+@keyframes rr-bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes rr-float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cone,
+  .chips {
+    animation: none;
+  }
+}
