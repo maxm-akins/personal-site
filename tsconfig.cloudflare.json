@@ -6,18 +6,19 @@
     "app/**/.server/**/*",
     "app/**/.client/**/*",
     "workers/**/*",
+    "test/**/*",
+    "vitest.config.ts",
     "worker-configuration.d.ts"
   ],
   "compilerOptions": {
     "composite": true,
     "strict": true,
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["vite/client"],
+    "types": ["vite/client", "@cloudflare/vitest-plugin/types"],
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
-    "baseUrl": ".",
     "rootDirs": [".", "./.react-router/types"],
     "paths": {
       "~/*": ["./app/*"]
