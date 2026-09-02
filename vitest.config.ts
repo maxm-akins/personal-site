@@ -1,5 +1,6 @@
+import path from "node:path";
 import { reactRouter } from "@react-router/dev/vite";
-import { cloudflareTest } from "@cloudflare/vitest-plugin";
+import { cloudflareTest, readD1Migrations } from "@cloudflare/vitest-plugin";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
@@ -7,10 +8,23 @@ export default defineConfig({
     projects: [
       {
         extends: true,
-        plugins: [reactRouter(), cloudflareTest({ wrangler: { configPath: "./wrangler.jsonc" } })],
+        plugins: [
+          reactRouter(),
+          cloudflareTest(async () => ({
+            wrangler: { configPath: "./wrangler.jsonc" },
+            miniflare: {
+              bindings: {
+                TEST_MIGRATIONS: await readD1Migrations(
+                  path.join(import.meta.dirname, "drizzle"),
+                ),
+              },
+            },
+          })),
+        ],
         test: {
           name: "workers",
           include: ["test/workers/**/*.test.ts"],
+          setupFiles: ["test/workers/apply-migrations.ts"],
         },
       },
       {
