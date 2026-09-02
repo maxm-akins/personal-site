@@ -1,11 +1,52 @@
+import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router";
 
+import { contact } from "../content";
+
 const NAV = [
-  { to: "/", label: "Home", end: true },
+  { to: "/home", label: "Home" },
   { to: "/projects", label: "Projects" },
   { to: "/resume", label: "Résumé" },
   { to: "/about", label: "About" },
 ];
+
+function ThemeToggle() {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem("theme");
+    } catch {}
+    const media =
+      window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
+    const current =
+      stored ??
+      document.documentElement.dataset.theme ??
+      (media ? "dark" : "light");
+    setTheme(current === "dark" ? "dark" : "light");
+  }, []);
+
+  function toggle() {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem("theme", next);
+    } catch {}
+  }
+
+  return (
+    <button
+      type="button"
+      className="mono theme-toggle"
+      onClick={toggle}
+      aria-label="Toggle color theme"
+    >
+      {theme === "dark" ? "☾ Dark" : "☽ Light"}
+    </button>
+  );
+}
 
 export default function Shell() {
   return (
@@ -13,13 +54,13 @@ export default function Shell() {
       <nav className="nav">
         <span className="nav-brand">Maxm Akins</span>
         <div className="nav-links">
-          {NAV.map(({ to, label, end }) => (
-            <NavLink key={to} to={to} end={end}>
+          {NAV.map(({ to, label }) => (
+            <NavLink key={to} to={to}>
               {label}
             </NavLink>
           ))}
+          <ThemeToggle />
         </div>
-        {/* theme toggle — task-005 */}
       </nav>
       <main>
         <Outlet />
@@ -27,9 +68,9 @@ export default function Shell() {
       <footer className="footer">
         <span className="footer-sign">Thanks for scrolling —</span>
         <div className="footer-links">
-          <span>GitHub</span>
-          <span>LinkedIn</span>
-          <span>Email</span>
+          <a href={contact.github}>GitHub</a>
+          <a href={contact.linkedin}>LinkedIn</a>
+          <a href={`mailto:${contact.email}`}>Email</a>
         </div>
       </footer>
     </>

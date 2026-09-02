@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { expect, test } from "vitest";
 
 import App, { ErrorBoundary } from "../../app/root";
-import Home from "../../app/routes/home";
+import Holding from "../../app/routes/holding";
 import Shell from "../../app/routes/shell";
 import Projects from "../../app/routes/projects";
 import Resume from "../../app/routes/resume";
@@ -14,7 +14,7 @@ const Stub = createRoutesStub([
     Component: App,
     ErrorBoundary,
     children: [
-      { index: true, Component: Home },
+      { index: true, Component: Holding },
       {
         Component: Shell,
         children: [
