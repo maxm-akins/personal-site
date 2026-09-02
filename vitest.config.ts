@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { reactRouter } from "@react-router/dev/vite";
 import { cloudflareTest, readD1Migrations } from "@cloudflare/vitest-plugin";
@@ -16,6 +17,10 @@ export default defineConfig({
               bindings: {
                 TEST_MIGRATIONS: await readD1Migrations(
                   path.join(import.meta.dirname, "drizzle"),
+                ),
+                TEST_SEED: readFileSync(
+                  path.join(import.meta.dirname, "seed.sql"),
+                  "utf8",
                 ),
               },
             },
