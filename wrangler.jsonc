@@ -9,7 +9,8 @@
     {
       "binding": "personal_site",
       "database_name": "personal-site",
-      "database_id": "2ce244be-2cfe-430e-985f-499451feeeca"
+      "database_id": "2ce244be-2cfe-430e-985f-499451feeeca",
+      "migrations_dir": "drizzle"
     }
   ]
 }
