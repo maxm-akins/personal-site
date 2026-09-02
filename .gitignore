@@ -1,7 +1,15 @@
 /node_modules
 
 .env
+.dev.vars*
 
 .DS_Store
 
 .next
+
+/.react-router/
+/build/
+/dist/
+.wrangler/
+worker-configuration.d.ts
+*.tsbuildinfo
