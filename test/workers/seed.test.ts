@@ -1,4 +1,4 @@
-import { env } from "cloudflare:workers";
+import { env, exports } from "cloudflare:workers";
 import { drizzle } from "drizzle-orm/d1";
 import { beforeAll, expect, test } from "vitest";
 
@@ -51,4 +51,12 @@ test("seed loads all skills, grouped by category via sort_order", async () => {
 
 test("class table is seeded empty", async () => {
   expect(await getClasses(db)).toEqual([]);
+});
+
+test("the home route renders seeded content end to end", async () => {
+  const res = await exports.default.fetch(new Request("https://example.com/"));
+  const html = await res.text();
+  expect(res.status).toBe(200);
+  expect(html).toContain("GrayMatter Systems");
+  expect(html).toContain("Personal Website");
 });
