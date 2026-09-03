@@ -1,8 +1,20 @@
-export function SectionHeader({ num, label }: { num: string; label: string }) {
+export function SectionHeader({
+  num,
+  label,
+  id,
+}: {
+  num: string;
+  label: string;
+  id: string;
+}) {
   return (
     <div className="sec-head">
-      <span className="sec-num">{num}</span>
-      <span className="lbl">{label}</span>
+      <span className="sec-num" aria-hidden="true">
+        {num}
+      </span>
+      <h2 id={id} className="lbl sec-label">
+        {label}
+      </h2>
     </div>
   );
 }

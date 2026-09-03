@@ -23,15 +23,15 @@ afterEach(() => {
 
 test("clicking the toggle flips data-theme and persists it", async () => {
   render(<Stub initialEntries={["/home"]} />);
-  const button = await screen.findByRole("button", {
-    name: /toggle color theme/i,
-  });
+  const button = await screen.findByRole("button");
   expect(button).toHaveTextContent("Light");
+  expect(button).toHaveAttribute("aria-pressed", "false");
 
   fireEvent.click(button);
   expect(document.documentElement.dataset.theme).toBe("dark");
   expect(localStorage.getItem("theme")).toBe("dark");
   expect(button).toHaveTextContent("Dark");
+  expect(button).toHaveAttribute("aria-pressed", "true");
 
   fireEvent.click(button);
   expect(document.documentElement.dataset.theme).toBe("light");
@@ -41,7 +41,7 @@ test("clicking the toggle flips data-theme and persists it", async () => {
 test("initial label honors a stored theme", async () => {
   localStorage.setItem("theme", "dark");
   render(<Stub initialEntries={["/home"]} />);
-  expect(
-    await screen.findByRole("button", { name: /toggle color theme/i }),
-  ).toHaveTextContent("Dark");
+  const button = await screen.findByRole("button");
+  expect(button).toHaveTextContent("Dark");
+  expect(button).toHaveAttribute("aria-pressed", "true");
 });

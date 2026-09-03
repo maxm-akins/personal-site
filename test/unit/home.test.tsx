@@ -11,13 +11,11 @@ import type {
 const getFeaturedProjects = vi.fn();
 const getWorkExperiences = vi.fn();
 const getSkills = vi.fn();
-const getClasses = vi.fn();
 
 vi.mock("../../app/db/queries", () => ({
   getFeaturedProjects: (...a: unknown[]) => getFeaturedProjects(...a),
   getWorkExperiences: (...a: unknown[]) => getWorkExperiences(...a),
   getSkills: (...a: unknown[]) => getSkills(...a),
-  getClasses: (...a: unknown[]) => getClasses(...a),
 }));
 
 const projects: ProjectItem[] = [
@@ -64,10 +62,9 @@ beforeEach(() => {
   getFeaturedProjects.mockResolvedValue(projects);
   getWorkExperiences.mockResolvedValue(roles);
   getSkills.mockResolvedValue(skills);
-  getClasses.mockResolvedValue([]);
 });
 
-test("loader fans out to all four getters and returns their data", async () => {
+test("loader fans out to the three getters and returns their data", async () => {
   const { loader, meta } = await import("../../app/routes/home");
   const db = { marker: true };
   const data = await loader({ context: { get: () => db } } as never);
@@ -75,12 +72,10 @@ test("loader fans out to all four getters and returns their data", async () => {
   expect(getFeaturedProjects).toHaveBeenCalledWith(db, 3);
   expect(getWorkExperiences).toHaveBeenCalledWith(db);
   expect(getSkills).toHaveBeenCalledWith(db);
-  expect(getClasses).toHaveBeenCalledWith(db);
   expect(data).toEqual({
     featuredProjects: projects,
     workExperiences: roles,
     skills,
-    classes: [],
   });
   expect(meta({} as never)).toEqual([{ title: "Maxm Akins" }]);
 });
@@ -95,7 +90,6 @@ test("home renders every section from loader data", async () => {
         featuredProjects: projects,
         workExperiences: roles,
         skills,
-        classes: [],
       }),
     },
   ]);

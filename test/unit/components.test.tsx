@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { expect, test } from "vitest";
 
 import type {
@@ -29,7 +29,8 @@ test("TimelineRow renders headers only by default", () => {
 
 test("TimelineRow renders a bullet per detail when showDetails is set", () => {
   render(<TimelineRow item={role(["one", "two"])} showDetails />);
-  expect(screen.getAllByRole("listitem")).toHaveLength(2);
+  const details = screen.getByRole("list");
+  expect(within(details).getAllByRole("listitem")).toHaveLength(2);
 });
 
 test("TimelineRow with showDetails and no details renders no list", () => {

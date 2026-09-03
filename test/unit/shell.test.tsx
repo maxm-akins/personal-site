@@ -31,7 +31,7 @@ test("shell renders nav and footer", async () => {
   render(<Stub initialEntries={["/projects"]} />);
   expect(await screen.findByRole("navigation")).toBeInTheDocument();
   expect(screen.getByRole("contentinfo")).toBeInTheDocument();
-  expect(screen.getByText("Maxm Akins")).toBeInTheDocument();
+  expect(screen.getByRole("img", { name: "Maxm Akins" })).toBeInTheDocument();
 });
 
 test("current route is marked active in the nav", async () => {

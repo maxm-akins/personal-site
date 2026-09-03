@@ -2,8 +2,8 @@ import type { ProjectItem } from "../db/queries";
 
 export function ProjectCard({ item }: { item: ProjectItem }) {
   return (
-    <div className="project-card">
-      <div className="project-name">{item.name}</div>
+    <li className="project-card">
+      <h3 className="project-name">{item.name}</h3>
       <p className="project-details">{item.details}</p>
       <div className="mono project-links">
         {item.link && (
@@ -17,6 +17,6 @@ export function ProjectCard({ item }: { item: ProjectItem }) {
           </a>
         )}
       </div>
-    </div>
+    </li>
   );
 }

@@ -8,15 +8,15 @@ export function TimelineRow({
   showDetails?: boolean;
 }) {
   return (
-    <div className="timeline-row">
+    <li className="timeline-row">
       <div className="mono timeline-dates">
         {item.startDate} — {item.endDate}
       </div>
       <div>
-        <div className="timeline-title">
+        <h3 className="timeline-title">
           {item.title}{" "}
           <span className="timeline-company">/ {item.companyName}</span>
-        </div>
+        </h3>
         {showDetails && item.details.length > 0 && (
           <ul className="timeline-details">
             {item.details.map((line, i) => (
@@ -25,6 +25,6 @@ export function TimelineRow({
           </ul>
         )}
       </div>
-    </div>
+    </li>
   );
 }

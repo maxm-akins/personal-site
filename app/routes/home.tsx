@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import type { Route } from "./+types/home";
 import { dbContext } from "../context";
 import {
-  getClasses,
   getFeaturedProjects,
   getSkills,
   getWorkExperiences,
@@ -27,13 +26,12 @@ export function meta({}: Route.MetaArgs) {
 
 export async function loader({ context }: Route.LoaderArgs) {
   const db = context.get(dbContext);
-  const [featuredProjects, workExperiences, skills, classes] = await Promise.all([
+  const [featuredProjects, workExperiences, skills] = await Promise.all([
     getFeaturedProjects(db, 3),
     getWorkExperiences(db),
     getSkills(db),
-    getClasses(db),
   ]);
-  return { featuredProjects, workExperiences, skills, classes };
+  return { featuredProjects, workExperiences, skills };
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
@@ -103,44 +101,44 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
       </section>
 
-      <section className="section">
-        <SectionHeader num="00" label="About" />
+      <section className="section" aria-labelledby="about">
+        <SectionHeader num="00" label="About" id="about" />
         <div className="sec-body">
           <p className="prose">{aboutBlurb}</p>
         </div>
       </section>
 
-      <section className="section">
-        <SectionHeader num="01" label="Experience" />
-        <div className="sec-body timeline">
+      <section className="section" aria-labelledby="experience">
+        <SectionHeader num="01" label="Experience" id="experience" />
+        <ul className="sec-body timeline">
           {workExperiences.map((role) => (
             <TimelineRow key={role.id} item={role} />
           ))}
-        </div>
+        </ul>
       </section>
 
-      <section className="section">
-        <SectionHeader num="02" label="Selected work" />
-        <div className="sec-body project-grid">
+      <section className="section" aria-labelledby="work">
+        <SectionHeader num="02" label="Selected work" id="work" />
+        <ul className="sec-body project-grid">
           {featuredProjects.map((proj) => (
             <ProjectCard key={proj.id} item={proj} />
           ))}
-        </div>
+        </ul>
       </section>
 
-      <section className="section">
-        <SectionHeader num="03" label="Education" />
+      <section className="section" aria-labelledby="education">
+        <SectionHeader num="03" label="Education" id="education" />
         <div className="sec-body">
-          <div className="edu-school">{education.school}</div>
-          <div className="mono edu-meta">
+          <h3 className="edu-school">{education.school}</h3>
+          <p className="mono edu-meta">
             {education.degree} · {education.years} · {education.honors}
-          </div>
+          </p>
         </div>
       </section>
 
-      <section className="section">
-        <SectionHeader num="04" label="Skills" />
-        <div className="sec-body skill-list">
+      <section className="section" aria-labelledby="skills">
+        <SectionHeader num="04" label="Skills" id="skills" />
+        <ul className="sec-body skill-list">
           {skillGroups.map((group) => (
             <SkillGroup
               key={group.category}
@@ -148,7 +146,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               skills={group.skills}
             />
           ))}
-        </div>
+        </ul>
       </section>
     </>
   );

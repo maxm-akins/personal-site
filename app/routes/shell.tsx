@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router";
 
 import { contact } from "../content";
+import { Logo } from "../components/Logo";
 
 const NAV = [
   { to: "/home", label: "Home" },
@@ -41,9 +42,10 @@ function ThemeToggle() {
       type="button"
       className="mono theme-toggle"
       onClick={toggle}
-      aria-label="Toggle color theme"
+      aria-pressed={theme === "dark"}
     >
-      {theme === "dark" ? "☾ Dark" : "☽ Light"}
+      <span aria-hidden="true">{theme === "dark" ? "☾" : "☽"}</span>{" "}
+      {theme === "dark" ? "Dark" : "Light"}
     </button>
   );
 }
@@ -52,7 +54,9 @@ export default function Shell() {
   return (
     <>
       <nav className="nav">
-        <span className="nav-brand">Maxm Akins</span>
+        <span className="nav-brand">
+          <Logo />
+        </span>
         <div className="nav-links">
           {NAV.map(({ to, label }) => (
             <NavLink key={to} to={to}>

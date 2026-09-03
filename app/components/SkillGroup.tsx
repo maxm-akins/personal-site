@@ -24,9 +24,9 @@ export function SkillGroup({
   skills: SkillItem[];
 }) {
   return (
-    <div className="skill-group">
-      <div className="lbl skill-category">{category}</div>
+    <li className="skill-group">
+      <h3 className="lbl skill-category">{category}</h3>
       <div className="skill-names">{skills.map((s) => s.name).join(" · ")}</div>
-    </div>
+    </li>
   );
 }

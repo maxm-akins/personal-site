@@ -149,6 +149,11 @@ a:active {
   color: var(--accent-pressed);
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .mono {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
 }
@@ -177,18 +182,26 @@ a:active {
   top: 0;
   z-index: 10;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 12px 24px;
   padding: 22px var(--gutter);
   background: var(--paper);
   border-bottom: 1.5px solid var(--rule);
 }
 
 .nav-brand {
-  font-weight: 600;
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 3px;
   color: var(--ink);
+  border-bottom: 2px solid var(--accent);
+}
+
+.nav-brand .logo {
+  height: 32px;
+  width: auto;
 }
 
 .nav-links {
@@ -402,15 +415,26 @@ a:active {
 .sec-head {
   grid-column: span 3;
   padding-top: 30px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
 }
 
-.sec-head .lbl {
-  margin-left: 8px;
+.sec-label {
+  margin: 0;
 }
 
 .sec-body {
   grid-column: span 9;
   padding-top: 28px;
+}
+
+.timeline,
+.project-grid,
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 .prose {
@@ -440,6 +464,7 @@ a:active {
 }
 
 .timeline-title {
+  margin: 0;
   font-size: 20px;
   font-weight: 600;
   color: var(--ink);
@@ -472,6 +497,7 @@ a:active {
 }
 
 .project-name {
+  margin: 0;
   font-size: 19px;
   font-weight: 600;
   color: var(--ink);
@@ -496,12 +522,14 @@ a:active {
 }
 
 .edu-school {
+  margin: 0;
   font-size: 24px;
+  font-weight: 600;
   color: var(--ink);
 }
 
 .edu-meta {
-  margin-top: 6px;
+  margin: 6px 0 0;
   font-size: 12px;
   color: var(--muted);
 }
@@ -510,6 +538,10 @@ a:active {
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+
+.skill-category {
+  margin: 0;
 }
 
 .skill-names {
@@ -538,6 +570,27 @@ a:active {
   .project-grid,
   .timeline-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-cta {
+    display: block;
+  }
+
+  .cta-aside {
+    position: static;
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .cta-arrow {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 16px;
   }
 }
 
