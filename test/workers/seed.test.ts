@@ -28,7 +28,8 @@ test("seed loads every work experience in résumé order", async () => {
     "FACET Lab",
     "FACET Lab",
   ]);
-  expect(rows[0].details).toEqual([]);
+  expect(rows[0].details).toHaveLength(3);
+  expect(rows[0].details[0]).toContain("generative and agentic AI");
   expect(rows[1].details[0]).toContain("Shipped production features");
 });
 
@@ -44,8 +45,11 @@ test("seed loads the project with both links", async () => {
 
 test("seed loads all skills, grouped by category via sort_order", async () => {
   const rows = await getSkills(db);
-  expect(rows).toHaveLength(30);
+  expect(rows).toHaveLength(31);
   expect(rows[0]).toMatchObject({ name: "Python", category: "Languages" });
+  expect(
+    rows.find((r) => r.category === "Frameworks & Runtimes")?.name,
+  ).toBe("React Router");
   expect(rows.at(-1)).toMatchObject({ name: "CI/CD", category: "Practices" });
 });
 

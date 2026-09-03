@@ -109,8 +109,9 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <div className="sec-body">
           <h3 className="edu-school">{education.school}</h3>
           <p className="mono edu-meta">
-            {education.degree} · {education.years} · {education.honors}
+            {education.degree} · {education.years} · GPA {education.gpa}
           </p>
+          <p className="mono edu-meta">{education.honors}</p>
         </div>
       </section>
 

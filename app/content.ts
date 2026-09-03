@@ -7,9 +7,10 @@ export const aboutBlurb =
 
 export const education = {
   school: "University of Pittsburgh",
-  degree: "BS, Computer Science",
+  degree: "BS, Computer Science, Minor in Economics",
   years: "2021–2025",
-  honors: "Summa Cum Laude",
+  gpa: "3.9 / 4.0",
+  honors: "Summa Cum Laude, Dean's List each semester",
 };
 
 export const contact = {
