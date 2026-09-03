@@ -11,6 +11,26 @@ const NAV = [
   { to: "/about", label: "About" },
 ];
 
+function ScrollSign() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <span
+      className="footer-sign"
+      style={{ visibility: scrolled ? "visible" : "hidden" }}
+    >
+      Thanks for scrolling —
+    </span>
+  );
+}
+
 function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
@@ -70,7 +90,7 @@ export default function Shell() {
         <Outlet />
       </main>
       <footer className="footer">
-        <span className="footer-sign">Thanks for scrolling —</span>
+        <ScrollSign />
         <div className="footer-links">
           <a href={contact.github} target="_blank" rel="noopener noreferrer">
             GitHub

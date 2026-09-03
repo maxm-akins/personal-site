@@ -1,5 +1,5 @@
 import { createRoutesStub } from "react-router";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { expect, test } from "vitest";
 
 import App, { ErrorBoundary } from "../../app/root";
@@ -18,8 +18,16 @@ const Stub = createRoutesStub([
       {
         Component: Shell,
         children: [
-          { path: "projects", Component: Projects },
-          { path: "resume", Component: Resume },
+          {
+            path: "projects",
+            Component: Projects,
+            loader: () => ({ projects: [] }),
+          },
+          {
+            path: "resume",
+            Component: Resume,
+            loader: () => ({ workExperiences: [], skills: [] }),
+          },
           { path: "about", Component: About },
         ],
       },
@@ -46,9 +54,9 @@ test("current route is marked active in the nav", async () => {
 
 test.each([
   ["/projects", "Selected work"],
-  ["/resume", "Full history"],
+  ["/resume", "Experience"],
   ["/about", "Colophon"],
-])("%s stub renders its label inside the shell", async (path, label) => {
+])("%s route renders its label inside the shell", async (path, label) => {
   render(<Stub initialEntries={[path]} />);
   expect(await screen.findByText(label)).toBeInTheDocument();
   expect(screen.getByRole("navigation")).toBeInTheDocument();
@@ -60,4 +68,21 @@ test("/ renders the holding page with no nav", async () => {
     await screen.findByRole("heading", { name: "New site in progress" }),
   ).toBeInTheDocument();
   expect(screen.queryByRole("navigation")).not.toBeInTheDocument();
+});
+
+test("footer sign-off shows only after the page is scrolled", async () => {
+  Object.defineProperty(window, "scrollY", {
+    configurable: true,
+    writable: true,
+    value: 0,
+  });
+  render(<Stub initialEntries={["/projects"]} />);
+  const sign = await screen.findByText("Thanks for scrolling —");
+  expect(sign).not.toBeVisible();
+
+  window.scrollY = 40;
+  fireEvent.scroll(window);
+  expect(sign).toBeVisible();
+
+  window.scrollY = 0;
 });

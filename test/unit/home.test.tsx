@@ -2,32 +2,13 @@ import { createRoutesStub } from "react-router";
 import { render, screen } from "@testing-library/react";
 import { beforeEach, expect, test, vi } from "vitest";
 
-import type {
-  ProjectItem,
-  SkillItem,
-  WorkExperienceItem,
-} from "../../app/db/queries";
+import type { WorkExperienceItem } from "../../app/db/queries";
 
-const getFeaturedProjects = vi.fn();
 const getWorkExperiences = vi.fn();
-const getSkills = vi.fn();
 
 vi.mock("../../app/db/queries", () => ({
-  getFeaturedProjects: (...a: unknown[]) => getFeaturedProjects(...a),
   getWorkExperiences: (...a: unknown[]) => getWorkExperiences(...a),
-  getSkills: (...a: unknown[]) => getSkills(...a),
 }));
-
-const projects: ProjectItem[] = [
-  {
-    id: 1,
-    name: "Personal Website",
-    link: "https://github.com/maxm-akins/personal-site",
-    webLink: "https://maxmakins.com",
-    details: "A richer alternative to a static résumé.",
-    sortOrder: 1,
-  },
-];
 
 const roles: WorkExperienceItem[] = [
   {
@@ -37,7 +18,7 @@ const roles: WorkExperienceItem[] = [
     title: "Software Engineer",
     startDate: "Jun 2025",
     endDate: "Present",
-    details: [],
+    details: ["Built an internal agentic chatbot for leadership."],
     sortOrder: 5,
   },
   {
@@ -52,45 +33,27 @@ const roles: WorkExperienceItem[] = [
   },
 ];
 
-const skills: SkillItem[] = [
-  { id: 1, name: "Python", category: "Languages", sortOrder: 1 },
-  { id: 2, name: "Go", category: "Languages", sortOrder: 2 },
-  { id: 3, name: "React", category: "Frameworks & Runtimes", sortOrder: 3 },
-];
-
 beforeEach(() => {
-  getFeaturedProjects.mockResolvedValue(projects);
   getWorkExperiences.mockResolvedValue(roles);
-  getSkills.mockResolvedValue(skills);
 });
 
-test("loader fans out to the three getters and returns their data", async () => {
+test("loader returns only the current role", async () => {
   const { loader, meta } = await import("../../app/routes/home");
   const db = { marker: true };
   const data = await loader({ context: { get: () => db } } as never);
 
-  expect(getFeaturedProjects).toHaveBeenCalledWith(db, 3);
   expect(getWorkExperiences).toHaveBeenCalledWith(db);
-  expect(getSkills).toHaveBeenCalledWith(db);
-  expect(data).toEqual({
-    featuredProjects: projects,
-    workExperiences: roles,
-    skills,
-  });
+  expect(data).toEqual({ currentRole: roles[0] });
   expect(meta({} as never)).toEqual([{ title: "Maxm Akins" }]);
 });
 
-test("home renders every section from loader data", async () => {
+test("home is a single hero: name, blurb, current role, résumé link — no sections", async () => {
   const { default: Home } = await import("../../app/routes/home");
   const Stub = createRoutesStub([
     {
       path: "/home",
       Component: Home,
-      loader: () => ({
-        featuredProjects: projects,
-        workExperiences: roles,
-        skills,
-      }),
+      loader: () => ({ currentRole: roles[0] }),
     },
   ]);
   render(<Stub initialEntries={["/home"]} />);
@@ -98,22 +61,24 @@ test("home renders every section from loader data", async () => {
   expect(
     await screen.findByRole("heading", { name: "Maxm Akins" }),
   ).toBeInTheDocument();
-  for (const label of [
-    "About",
-    "Experience",
-    "Selected work",
-    "Education",
-    "Skills",
-  ]) {
-    expect(screen.getByText(label)).toBeInTheDocument();
-  }
+  expect(screen.getByText(/Hi, I'm Maxm\./)).toBeInTheDocument();
   expect(
-    screen.getByText(/Software Engineering Intern/),
+    screen.getByText(/Software Engineer at Apple/),
   ).toBeInTheDocument();
   expect(
-    screen.queryByText(/Shipped production features/),
+    screen.getByText(/BS Computer Science, University of Pittsburgh/),
+  ).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /Read the résumé/ })).toHaveAttribute(
+    "href",
+    "/resume",
+  );
+
+  expect(screen.queryByRole("heading", { level: 2 })).not.toBeInTheDocument();
+  for (const gone of ["Education", "Experience", "Skills", "Selected work"]) {
+    expect(screen.queryByText(gone)).not.toBeInTheDocument();
+  }
+  expect(
+    screen.queryByText(/Software Engineering Intern/),
   ).not.toBeInTheDocument();
-  expect(screen.getByText("Personal Website")).toBeInTheDocument();
-  expect(screen.getByText("University of Pittsburgh")).toBeInTheDocument();
-  expect(screen.getByText("Languages")).toBeInTheDocument();
+  expect(screen.queryByRole("link", { name: "GitHub" })).toBeNull();
 });
