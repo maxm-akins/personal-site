@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router";
+import { Link, NavLink, Outlet } from "react-router";
 
 import { contact } from "../content";
 import { Logo } from "../components/Logo";
 
 const NAV = [
   { to: "/home", label: "Home" },
-  { to: "/projects", label: "Projects" },
   { to: "/resume", label: "Résumé" },
+  { to: "/projects", label: "Projects" },
   { to: "/about", label: "About" },
 ];
 
@@ -54,9 +54,9 @@ export default function Shell() {
   return (
     <>
       <nav className="nav">
-        <span className="nav-brand">
+        <Link to={NAV[0].to} className="nav-brand" aria-label="Home">
           <Logo />
-        </span>
+        </Link>
         <div className="nav-links">
           {NAV.map(({ to, label }) => (
             <NavLink key={to} to={to}>
@@ -72,8 +72,12 @@ export default function Shell() {
       <footer className="footer">
         <span className="footer-sign">Thanks for scrolling —</span>
         <div className="footer-links">
-          <a href={contact.github}>GitHub</a>
-          <a href={contact.linkedin}>LinkedIn</a>
+          <a href={contact.github} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
           <a href={`mailto:${contact.email}`}>Email</a>
         </div>
       </footer>

@@ -2,11 +2,8 @@ export const name = "Maxm Akins";
 
 export const heroEyebrow = "Software engineer — Austin, TX";
 
-export const heroTagline =
-  "[ one or two sentences, in your voice — the kind of systems you build and what you care about. Placeholder. ]";
-
 export const aboutBlurb =
-  "[ a short paragraph — where you are, what you're working on, what you're drawn to technically. 2–4 sentences. Placeholder. ]";
+  "Hi, I'm Maxm. I went to the University of Pittsburgh (H2P) for my undergraduate Computer Science degree and Economics minor, and I now call Austin home. I am an early career engineer with experience and interest in everything from MCPs to full-stack enterprise applications.";
 
 export const education = {
   school: "University of Pittsburgh",

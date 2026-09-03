@@ -7,14 +7,7 @@ import {
   getSkills,
   getWorkExperiences,
 } from "../db/queries";
-import {
-  aboutBlurb,
-  contact,
-  education,
-  heroEyebrow,
-  heroTagline,
-  name,
-} from "../content";
+import { aboutBlurb, contact, education, heroEyebrow, name } from "../content";
 import { SectionHeader } from "../components/SectionHeader";
 import { TimelineRow } from "../components/TimelineRow";
 import { ProjectCard } from "../components/ProjectCard";
@@ -44,7 +37,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <div className="hero-main">
           <p className="lbl">{heroEyebrow}</p>
           <h1 className="hero-name">{name}</h1>
-          <p className="hero-tagline">{heroTagline}</p>
 
           <div className="hero-cta">
             <Link to="/resume" className="mono cta-box">
@@ -67,8 +59,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </div>
 
           <div className="mono hero-links">
-            <a href={contact.github}>GitHub</a>
-            <a href={contact.linkedin}>LinkedIn</a>
+            <a href={contact.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
             <a href={`mailto:${contact.email}`}>Email</a>
           </div>
         </div>
@@ -108,26 +104,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="experience">
-        <SectionHeader num="01" label="Experience" id="experience" />
-        <ul className="sec-body timeline">
-          {workExperiences.map((role) => (
-            <TimelineRow key={role.id} item={role} />
-          ))}
-        </ul>
-      </section>
-
-      <section className="section" aria-labelledby="work">
-        <SectionHeader num="02" label="Selected work" id="work" />
-        <ul className="sec-body project-grid">
-          {featuredProjects.map((proj) => (
-            <ProjectCard key={proj.id} item={proj} />
-          ))}
-        </ul>
-      </section>
-
       <section className="section" aria-labelledby="education">
-        <SectionHeader num="03" label="Education" id="education" />
+        <SectionHeader num="01" label="Education" id="education" />
         <div className="sec-body">
           <h3 className="edu-school">{education.school}</h3>
           <p className="mono edu-meta">
@@ -136,8 +114,17 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
       </section>
 
+      <section className="section" aria-labelledby="experience">
+        <SectionHeader num="02" label="Experience" id="experience" />
+        <ul className="sec-body timeline">
+          {workExperiences.map((role) => (
+            <TimelineRow key={role.id} item={role} />
+          ))}
+        </ul>
+      </section>
+
       <section className="section" aria-labelledby="skills">
-        <SectionHeader num="04" label="Skills" id="skills" />
+        <SectionHeader num="03" label="Skills" id="skills" />
         <ul className="sec-body skill-list">
           {skillGroups.map((group) => (
             <SkillGroup
@@ -145,6 +132,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               category={group.category}
               skills={group.skills}
             />
+          ))}
+        </ul>
+      </section>
+
+      <section className="section" aria-labelledby="work">
+        <SectionHeader num="04" label="Selected work" id="work" />
+        <ul className="sec-body project-grid">
+          {featuredProjects.map((proj) => (
+            <ProjectCard key={proj.id} item={proj} />
           ))}
         </ul>
       </section>

@@ -7,12 +7,22 @@ export function ProjectCard({ item }: { item: ProjectItem }) {
       <p className="project-details">{item.details}</p>
       <div className="mono project-links">
         {item.link && (
-          <a href={item.link} className="project-link">
+          <a
+            href={item.link}
+            className="project-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             code
           </a>
         )}
         {item.webLink && (
-          <a href={item.webLink} className="project-link">
+          <a
+            href={item.webLink}
+            className="project-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             live
           </a>
         )}

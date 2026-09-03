@@ -32,6 +32,9 @@ test("shell renders nav and footer", async () => {
   expect(await screen.findByRole("navigation")).toBeInTheDocument();
   expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   expect(screen.getByRole("img", { name: "Maxm Akins" })).toBeInTheDocument();
+  expect(
+    screen.getByRole("img", { name: "Maxm Akins" }).closest("a"),
+  ).toHaveAttribute("href", "/home");
 });
 
 test("current route is marked active in the nav", async () => {
