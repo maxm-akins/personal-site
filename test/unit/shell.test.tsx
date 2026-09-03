@@ -3,8 +3,8 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { expect, test } from "vitest";
 
 import App, { ErrorBoundary } from "../../app/root";
-import Holding from "../../app/routes/holding";
 import Shell from "../../app/routes/shell";
+import Home from "../../app/routes/home";
 import Resume from "../../app/routes/resume";
 import About from "../../app/routes/about";
 
@@ -13,10 +13,14 @@ const Stub = createRoutesStub([
     Component: App,
     ErrorBoundary,
     children: [
-      { index: true, Component: Holding },
       {
         Component: Shell,
         children: [
+          {
+            index: true,
+            Component: Home,
+            loader: () => ({ currentRole: null }),
+          },
           {
             path: "resume",
             Component: Resume,
@@ -36,7 +40,7 @@ test("shell renders nav and footer", async () => {
   expect(screen.getByRole("img", { name: "Maxm Akins" })).toBeInTheDocument();
   expect(
     screen.getByRole("img", { name: "Maxm Akins" }).closest("a"),
-  ).toHaveAttribute("href", "/home");
+  ).toHaveAttribute("href", "/");
 });
 
 test("the Projects tab is hidden", async () => {
@@ -63,12 +67,17 @@ test.each([
   expect(screen.getByRole("navigation")).toBeInTheDocument();
 });
 
-test("/ renders the holding page with no nav", async () => {
+test("/ renders the home inside the shell", async () => {
   render(<Stub initialEntries={["/"]} />);
   expect(
-    await screen.findByRole("heading", { name: "New site in progress" }),
+    await screen.findByRole("heading", { name: "Maxm Akins" }),
   ).toBeInTheDocument();
-  expect(screen.queryByRole("navigation")).not.toBeInTheDocument();
+  expect(screen.getByRole("navigation")).toBeInTheDocument();
+});
+
+test("unknown path hits the 404 boundary", async () => {
+  render(<Stub initialEntries={["/does-not-exist"]} />);
+  expect(await screen.findByText(/could not be found/i)).toBeInTheDocument();
 });
 
 test("footer sign-off shows only after the page is scrolled", async () => {

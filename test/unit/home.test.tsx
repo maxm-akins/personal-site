@@ -51,12 +51,12 @@ test("home is a single hero: name, blurb, current role, résumé link — no sec
   const { default: Home } = await import("../../app/routes/home");
   const Stub = createRoutesStub([
     {
-      path: "/home",
+      path: "/",
       Component: Home,
       loader: () => ({ currentRole: roles[0] }),
     },
   ]);
-  render(<Stub initialEntries={["/home"]} />);
+  render(<Stub initialEntries={["/"]} />);
 
   expect(
     await screen.findByRole("heading", { name: "Maxm Akins" }),

@@ -5,7 +5,7 @@ import { contact } from "../content";
 import { Logo } from "../components/Logo";
 
 const NAV = [
-  { to: "/home", label: "Home" },
+  { to: "/", label: "Home" },
   { to: "/resume", label: "Résumé" },
   { to: "/about", label: "Under the hood" },
 ];
@@ -105,7 +105,7 @@ export default function Shell() {
         </Link>
         <div className="nav-links">
           {NAV.map(({ to, label }) => (
-            <NavLink key={to} to={to}>
+            <NavLink key={to} to={to} end={to === "/"}>
               {label}
             </NavLink>
           ))}
