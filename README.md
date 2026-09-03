@@ -1,7 +1,6 @@
 # maxmakins.com
 
-My résumé / portfolio site. The stack is part of the point — a small, current
-edge deployment rather than a static export.
+My résumé / portfolio site
 
 **[maxmakins.com](https://maxmakins.com)** · [Under the hood](https://maxmakins.com/about)
 
