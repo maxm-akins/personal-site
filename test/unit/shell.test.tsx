@@ -5,7 +5,6 @@ import { expect, test } from "vitest";
 import App, { ErrorBoundary } from "../../app/root";
 import Holding from "../../app/routes/holding";
 import Shell from "../../app/routes/shell";
-import Projects from "../../app/routes/projects";
 import Resume from "../../app/routes/resume";
 import About from "../../app/routes/about";
 
@@ -19,11 +18,6 @@ const Stub = createRoutesStub([
         Component: Shell,
         children: [
           {
-            path: "projects",
-            Component: Projects,
-            loader: () => ({ projects: [] }),
-          },
-          {
             path: "resume",
             Component: Resume,
             loader: () => ({ workExperiences: [], skills: [] }),
@@ -36,7 +30,7 @@ const Stub = createRoutesStub([
 ]);
 
 test("shell renders nav and footer", async () => {
-  render(<Stub initialEntries={["/projects"]} />);
+  render(<Stub initialEntries={["/about"]} />);
   expect(await screen.findByRole("navigation")).toBeInTheDocument();
   expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   expect(screen.getByRole("img", { name: "Maxm Akins" })).toBeInTheDocument();
@@ -45,17 +39,24 @@ test("shell renders nav and footer", async () => {
   ).toHaveAttribute("href", "/home");
 });
 
+test("the Projects tab is hidden", async () => {
+  render(<Stub initialEntries={["/about"]} />);
+  await screen.findByRole("navigation");
+  expect(
+    screen.queryByRole("link", { name: "Projects" }),
+  ).not.toBeInTheDocument();
+});
+
 test("current route is marked active in the nav", async () => {
   render(<Stub initialEntries={["/about"]} />);
   expect(await screen.findByRole("link", { current: "page" })).toHaveTextContent(
-    "About",
+    "Under the hood",
   );
 });
 
 test.each([
-  ["/projects", "Selected work"],
   ["/resume", "Experience"],
-  ["/about", "Colophon"],
+  ["/about", "The stack"],
 ])("%s route renders its label inside the shell", async (path, label) => {
   render(<Stub initialEntries={[path]} />);
   expect(await screen.findByText(label)).toBeInTheDocument();
@@ -76,8 +77,8 @@ test("footer sign-off shows only after the page is scrolled", async () => {
     writable: true,
     value: 0,
   });
-  render(<Stub initialEntries={["/projects"]} />);
-  const sign = await screen.findByText("Thanks for scrolling —");
+  render(<Stub initialEntries={["/about"]} />);
+  const sign = await screen.findByText("Thanks for scrolling ;)");
   expect(sign).not.toBeVisible();
 
   window.scrollY = 40;

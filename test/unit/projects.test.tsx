@@ -25,17 +25,20 @@ beforeEach(() => {
   getProjects.mockResolvedValue(projects);
 });
 
-test("loader calls getProjects and returns its data", async () => {
+test("loader redirects to / (the tab is parked)", async () => {
   const { loader, meta } = await import("../../app/routes/projects");
-  const db = { marker: true };
-  const data = await loader({ context: { get: () => db } } as never);
+  const res = await loader({ context: { get: () => ({}) } } as never).catch(
+    (e) => e,
+  );
 
-  expect(getProjects).toHaveBeenCalledWith(db);
-  expect(data).toEqual({ projects });
+  expect(res).toBeInstanceOf(Response);
+  expect(res.status).toBe(302);
+  expect(res.headers.get("Location")).toBe("/");
+  expect(getProjects).not.toHaveBeenCalled();
   expect(meta({} as never)).toEqual([{ title: "Projects — Maxm Akins" }]);
 });
 
-test("projects renders the section and a card per project", async () => {
+test("the parked page still renders when given data (for restore)", async () => {
   const { default: Projects } = await import("../../app/routes/projects");
   const Stub = createRoutesStub([
     { path: "/projects", Component: Projects, loader: () => ({ projects }) },

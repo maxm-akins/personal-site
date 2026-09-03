@@ -286,20 +286,37 @@ a:active {
 }
 
 .theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--muted);
   background: transparent;
-  border: 1.5px solid var(--rule);
-  border-radius: 6px;
-  padding: 4px 10px;
+  border: 0;
+  padding: 4px 2px;
   cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition: color 0.15s ease;
 }
 
 .theme-toggle:hover {
-  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tt-icon {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  color: var(--ink);
+}
+
+.theme-toggle:hover .tt-icon {
+  color: var(--accent);
+}
+
+.tt-star {
+  fill: var(--accent);
 }
 
 .hero {
@@ -422,6 +439,12 @@ a:active {
   font-size: 22px;
   line-height: 1.6;
   color: var(--body);
+}
+
+.prose q {
+  quotes: "\201C" "\201D";
+  font-style: italic;
+  color: var(--ink);
 }
 
 .timeline {
@@ -626,6 +649,10 @@ a:active {
 
 .timeline-details {
   list-style: disc;
+}
+
+.prose + .prose {
+  margin-top: 18px;
 }
 
 .timeline-details li + li {

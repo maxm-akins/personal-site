@@ -1,3 +1,5 @@
+import { redirect } from "react-router";
+
 import type { Route } from "./+types/projects";
 import { dbContext } from "../context";
 import { getProjects } from "../db/queries";
@@ -9,6 +11,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader({ context }: Route.LoaderArgs) {
+  // Projects tab is parked until the write-ups are ready — remove this line to restore.
+  throw redirect("/");
   const db = context.get(dbContext);
   const projects = await getProjects(db);
   return { projects };

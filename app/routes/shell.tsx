@@ -7,8 +7,7 @@ import { Logo } from "../components/Logo";
 const NAV = [
   { to: "/home", label: "Home" },
   { to: "/resume", label: "Résumé" },
-  { to: "/projects", label: "Projects" },
-  { to: "/about", label: "About" },
+  { to: "/about", label: "Under the hood" },
 ];
 
 function ScrollSign() {
@@ -26,7 +25,7 @@ function ScrollSign() {
       className="footer-sign"
       style={{ visibility: scrolled ? "visible" : "hidden" }}
     >
-      Thanks for scrolling —
+      Thanks for scrolling ;)
     </span>
   );
 }
@@ -64,7 +63,34 @@ function ThemeToggle() {
       onClick={toggle}
       aria-pressed={theme === "dark"}
     >
-      <span aria-hidden="true">{theme === "dark" ? "☾" : "☽"}</span>{" "}
+      <svg
+        className="tt-icon"
+        viewBox="0 0 24 24"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        {theme === "dark" ? (
+          <>
+            <path
+              d="M20.5 14.5A8 8 0 0 1 9.5 3.5 8 8 0 1 0 20.5 14.5Z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+            />
+            <path
+              className="tt-star"
+              d="M17.6 3.1l.7 1.7 1.7.7-1.7.7-.7 1.7-.7-1.7-1.7-.7 1.7-.7z"
+              stroke="none"
+            />
+          </>
+        ) : (
+          <g fill="none" stroke="currentColor" strokeWidth="1.7">
+            <circle cx="12" cy="12" r="4.3" />
+            <path d="M12 2.4v2.6M12 19v2.6M2.4 12h2.6M19 12h2.6M5 5l1.9 1.9M17.1 17.1 19 19M19 5l-1.9 1.9M6.9 17.1 5 19" />
+          </g>
+        )}
+      </svg>
       {theme === "dark" ? "Dark" : "Light"}
     </button>
   );
