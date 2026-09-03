@@ -32,6 +32,32 @@
   }
 }
 
+:root[data-theme="light"] {
+  --paper: #f6f1e7;
+  --surface: #fbf7ef;
+  --ink: #26221c;
+  --body: #453d31;
+  --muted: #8a7e6b;
+  --rule: #26221c;
+  --hairline: #ded3be;
+  --accent: #c9552b;
+  --accent-pressed: #9e3f1e;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --paper: #201d18;
+  --surface: #2a2620;
+  --ink: #f1ebdf;
+  --body: #cdbfae;
+  --muted: #8e8172;
+  --rule: #4a4235;
+  --hairline: #34302a;
+  --accent: #e4784c;
+  --accent-pressed: #f0946c;
+  color-scheme: dark;
+}
+
 html,
 body {
   background: var(--paper);
@@ -39,69 +65,12 @@ body {
   font-family: "Newsreader", Georgia, serif;
 }
 
-.holding {
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 48px 24px;
-  text-align: center;
-}
-
-.holding-label {
-  margin: 0;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.holding h1 {
-  margin: 0;
-  font-size: clamp(40px, 8vw, 64px);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.holding-spot {
-  width: 200px;
-  height: auto;
-  color: var(--ink);
-  animation: holding-bob 2.8s ease-in-out infinite alternate;
-}
-
-.holding-spot .accent {
-  stroke: var(--accent);
-}
-
-.holding-spot .accent-fill {
-  fill: var(--accent);
-}
-
-.holding-note {
-  margin: 0;
-  font-family: "Caveat", "Comic Sans MS", cursive;
-  font-size: 28px;
-  color: var(--accent);
-}
-
-@keyframes holding-bob {
+@keyframes hero-bob {
   from {
     transform: translateY(0);
   }
   to {
     transform: translateY(-6px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .holding-spot {
-    animation: none;
   }
 }
 
@@ -121,6 +90,11 @@ a {
 a:hover,
 a:active {
   color: var(--accent-pressed);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .mono {
@@ -149,23 +123,33 @@ a:active {
 .nav {
   position: sticky;
   top: 0;
+  z-index: 10;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 12px 24px;
   padding: 22px var(--gutter);
   background: var(--paper);
   border-bottom: 1.5px solid var(--rule);
 }
 
 .nav-brand {
-  font-weight: 600;
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 3px;
   color: var(--ink);
+  border-bottom: 2px solid var(--accent);
+}
+
+.nav-brand .logo {
+  height: 32px;
+  width: auto;
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 26px;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 12px;
@@ -242,4 +226,378 @@ a:active {
 .stub .hand {
   font-size: 26px;
   color: var(--accent);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  padding: 4px 2px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+}
+
+.tt-icon {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  color: var(--ink);
+}
+
+.theme-toggle:hover .tt-icon {
+  color: var(--accent);
+}
+
+.tt-star {
+  fill: var(--accent);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  padding: clamp(48px, 8vw, 84px) var(--gutter) 0;
+}
+
+.hero-main {
+  grid-column: span 7;
+}
+
+.hero-aside {
+  grid-column: span 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-name {
+  margin: 18px 0 0;
+  font-size: var(--text-display);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.hero-cta {
+  position: relative;
+  display: inline-block;
+  margin-top: 36px;
+}
+
+.cta-box {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--ink);
+  border: 1.5px solid var(--rule);
+  border-radius: 6px;
+  padding: 10px 16px;
+}
+
+.cta-box:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.cta-aside {
+  position: absolute;
+  left: calc(100% + 14px);
+  top: 4px;
+  white-space: nowrap;
+  font-size: 22px;
+  color: var(--accent);
+}
+
+.cta-arrow {
+  position: absolute;
+  left: calc(100% + 2px);
+  top: 26px;
+  width: 44px;
+  color: var(--accent);
+}
+
+.hero-spot {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  color: var(--ink);
+  animation: hero-bob 3s ease-in-out infinite alternate;
+}
+
+.hero-spot .accent {
+  stroke: var(--accent);
+}
+
+.hero-spot .accent-fill {
+  fill: var(--accent);
+}
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: var(--space-section);
+  padding: clamp(40px, 6vw, 60px) var(--gutter) 0;
+  border-top: 1.5px solid var(--rule);
+}
+
+.sec-head {
+  grid-column: span 3;
+  padding-top: 30px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.sec-label {
+  margin: 0;
+}
+
+.sec-body {
+  grid-column: span 9;
+  padding-top: 28px;
+}
+
+.timeline,
+.project-grid,
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.prose {
+  margin: 0;
+  max-width: 640px;
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+.prose q {
+  quotes: "\201C" "\201D";
+  font-style: italic;
+  color: var(--ink);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.timeline-dates {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.timeline-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.timeline-company {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.timeline-details {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--body);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  padding: 22px;
+  background: var(--surface);
+  border: 1.5px solid var(--rule);
+  border-radius: 10px;
+}
+
+.project-name {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.project-details {
+  margin: 8px 0 16px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--body);
+}
+
+.project-links {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+}
+
+.project-link {
+  color: var(--ink);
+  border-bottom: 1.5px solid var(--accent);
+}
+
+.edu-school {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.edu-meta {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skill-category {
+  margin: 0;
+}
+
+.skill-names {
+  margin-top: 6px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--body);
+}
+
+@media (max-width: 720px) {
+  .hero-main,
+  .hero-aside,
+  .sec-head,
+  .sec-body {
+    grid-column: 1 / -1;
+  }
+
+  .hero-aside {
+    justify-content: flex-start;
+  }
+
+  .sec-body {
+    padding-top: 0;
+  }
+
+  .project-grid,
+  .timeline-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-cta {
+    display: block;
+  }
+
+  .cta-aside {
+    position: static;
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .cta-arrow {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-spot {
+    animation: none;
+  }
+
+  .theme-toggle {
+    transition: none;
+  }
+}
+
+.hero-note {
+  display: block;
+  margin-top: 28px;
+  font-size: 22px;
+  color: var(--accent);
+}
+
+.hero-about {
+  margin-top: 24px;
+}
+
+.hero-now {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.resume-spot {
+  max-width: 168px;
+}
+
+.hero-namerow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.avatar {
+  flex: none;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--rule);
+}
+
+.edu-item + .edu-item {
+  margin-top: 20px;
+}
+
+.timeline-details {
+  list-style: disc;
+}
+
+.prose + .prose {
+  margin-top: 18px;
+}
+
+.timeline-details li + li {
+  margin-top: 8px;
 }
