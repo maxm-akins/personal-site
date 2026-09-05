@@ -51,6 +51,13 @@ test("the Projects tab is hidden", async () => {
   ).not.toBeInTheDocument();
 });
 
+test("the theme toggle lives in the footer, not the nav", async () => {
+  render(<Stub initialEntries={["/about"]} />);
+  const toggle = await screen.findByRole("button", { name: /light|dark/i });
+  expect(toggle.closest("nav")).toBeNull();
+  expect(toggle.closest("footer")).toBeInTheDocument();
+});
+
 test("current route is marked active in the nav", async () => {
   render(<Stub initialEntries={["/about"]} />);
   expect(await screen.findByRole("link", { current: "page" })).toHaveTextContent(
@@ -77,7 +84,14 @@ test("/ renders the home inside the shell", async () => {
 
 test("unknown path hits the 404 boundary", async () => {
   render(<Stub initialEntries={["/does-not-exist"]} />);
-  expect(await screen.findByText(/could not be found/i)).toBeInTheDocument();
+  expect(
+    await screen.findByRole("heading", { name: /wandered off/i }),
+  ).toBeInTheDocument();
+  expect(screen.getByText("404")).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /take me home/i })).toHaveAttribute(
+    "href",
+    "/",
+  );
 });
 
 test("footer sign-off shows only after the page is scrolled", async () => {

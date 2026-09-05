@@ -109,7 +109,6 @@ export default function Shell() {
               {label}
             </NavLink>
           ))}
-          <ThemeToggle />
         </div>
       </nav>
       <main>
@@ -125,6 +124,7 @@ export default function Shell() {
             LinkedIn
           </a>
           <a href={`mailto:${contact.email}`}>Email</a>
+          <ThemeToggle />
         </div>
       </footer>
     </>

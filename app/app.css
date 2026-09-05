@@ -190,6 +190,7 @@ a:active {
 
 .footer-links {
   display: flex;
+  align-items: center;
   gap: 20px;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 12px;
@@ -238,7 +239,7 @@ a:active {
   color: var(--muted);
   background: transparent;
   border: 0;
-  padding: 4px 2px;
+  padding: 0;
   cursor: pointer;
   transition: color 0.15s ease;
 }
@@ -504,10 +505,6 @@ a:active {
     grid-column: 1 / -1;
   }
 
-  .hero-aside {
-    justify-content: flex-start;
-  }
-
   .sec-body {
     padding-top: 0;
   }
@@ -515,6 +512,15 @@ a:active {
   .project-grid,
   .timeline-row {
     grid-template-columns: 1fr;
+  }
+
+  .hero-spot {
+    max-width: 188px;
+    margin-top: 12px;
+  }
+
+  .hero-spot.resume-spot {
+    max-width: 150px;
   }
 }
 
@@ -600,4 +606,39 @@ a:active {
 
 .timeline-details li + li {
   margin-top: 8px;
+}
+
+.error-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(72px, 16vw, 148px) var(--gutter);
+}
+
+.error-spot {
+  display: block;
+  width: 100%;
+  max-width: 190px;
+  height: auto;
+  margin-top: 44px;
+  color: var(--ink);
+}
+
+.error-spot .accent {
+  stroke: var(--accent);
+}
+
+.error-spot .accent-fill {
+  fill: var(--accent);
+}
+
+.error-trace {
+  margin-top: 32px;
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--body);
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
 }

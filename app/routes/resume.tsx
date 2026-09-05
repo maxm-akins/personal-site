@@ -49,7 +49,7 @@ export default function Resume({ loaderData }: Route.ComponentProps) {
         <div className="hero-aside">
           <svg
             className="hero-spot resume-spot"
-            viewBox="0 0 168 210"
+            viewBox="12 11 146 182"
             role="img"
             aria-label="Hand-drawn sketch of a sheet of paper"
             fill="none"

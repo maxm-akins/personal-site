@@ -4,7 +4,6 @@ import { beforeAll, expect, test } from "vitest";
 
 import {
   getClasses,
-  getFeaturedProjects,
   getProjects,
   getSkills,
   getWorkExperiences,
@@ -43,11 +42,6 @@ test("getProjects: sort_order desc, nullable link/web_link", async () => {
   expect(rows.find((r) => r.name === "P1")?.link).toBeNull();
   expect(rows.find((r) => r.name === "P1")?.webLink).toBeNull();
   expect(rows.find((r) => r.name === "P2")?.webLink).toBe("https://p2");
-});
-
-test("getFeaturedProjects: top N by sort_order desc", async () => {
-  expect((await getFeaturedProjects(db)).map((r) => r.name)).toEqual(["P4", "P3", "P2"]);
-  expect(await getFeaturedProjects(db, 1)).toHaveLength(1);
 });
 
 test("getSkills: sort_order asc, nullable category", async () => {

@@ -55,7 +55,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <div className="hero-aside">
         <svg
           className="hero-spot"
-          viewBox="0 0 240 260"
+          viewBox="19 7 210 208"
           role="img"
           aria-label="Hand-drawn desk scene with a laptop, notebook and coffee"
           fill="none"
@@ -76,9 +76,9 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           <path className="accent" strokeWidth="3" d="M170 158q-7-10 0-20" />
           <path className="accent" strokeWidth="3" d="M187 158q-7-10 0-20" />
           <g className="accent-fill">
-            <circle cx="54" cy="24" r="4.5" />
-            <circle cx="88" cy="14" r="3.5" />
-            <circle cx="26" cy="118" r="3.5" />
+            <circle cx="54" cy="24" r="4" />
+            <circle cx="88" cy="14" r="3" />
+            <circle cx="26" cy="118" r="3" />
           </g>
         </svg>
       </div>
