@@ -77,7 +77,14 @@ test("/ renders the home inside the shell", async () => {
 
 test("unknown path hits the 404 boundary", async () => {
   render(<Stub initialEntries={["/does-not-exist"]} />);
-  expect(await screen.findByText(/could not be found/i)).toBeInTheDocument();
+  expect(
+    await screen.findByRole("heading", { name: /wandered off/i }),
+  ).toBeInTheDocument();
+  expect(screen.getByText("404")).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /take me home/i })).toHaveAttribute(
+    "href",
+    "/",
+  );
 });
 
 test("footer sign-off shows only after the page is scrolled", async () => {

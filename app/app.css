@@ -601,3 +601,38 @@ a:active {
 .timeline-details li + li {
   margin-top: 8px;
 }
+
+.error-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(72px, 16vw, 148px) var(--gutter);
+}
+
+.error-spot {
+  display: block;
+  width: 100%;
+  max-width: 190px;
+  height: auto;
+  margin-top: 44px;
+  color: var(--ink);
+}
+
+.error-spot .accent {
+  stroke: var(--accent);
+}
+
+.error-spot .accent-fill {
+  fill: var(--accent);
+}
+
+.error-trace {
+  margin-top: 32px;
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--body);
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+}
