@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="217 227 498 404" role="img" aria-label="MA monogram">
   <title>MA monogram</title>
+  <!-- Geometry mirrors app/components/monogram.ts (MONOGRAM_PATHS / MONOGRAM_VIEWBOX).
+       Keep byte-identical; test/unit/monogram.test.ts fails on drift. -->
   <style>
     .mark { fill: #080c0d; }
     @media (prefers-color-scheme: dark) { .mark { fill: #f1ebdf; } }
