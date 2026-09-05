@@ -505,10 +505,6 @@ a:active {
     grid-column: 1 / -1;
   }
 
-  .hero-aside {
-    justify-content: flex-start;
-  }
-
   .sec-body {
     padding-top: 0;
   }
@@ -516,6 +512,15 @@ a:active {
   .project-grid,
   .timeline-row {
     grid-template-columns: 1fr;
+  }
+
+  .hero-spot {
+    max-width: 188px;
+    margin-top: 12px;
+  }
+
+  .hero-spot.resume-spot {
+    max-width: 150px;
   }
 }
 

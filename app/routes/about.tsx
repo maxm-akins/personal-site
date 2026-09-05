@@ -18,7 +18,7 @@ export default function About() {
         <div className="hero-aside">
           <svg
             className="hero-spot"
-            viewBox="0 0 240 260"
+            viewBox="38 24 174 176"
             role="img"
             aria-label="Hand-drawn sketch of two interlocking gears"
             fill="none"
