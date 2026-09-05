@@ -51,6 +51,13 @@ test("the Projects tab is hidden", async () => {
   ).not.toBeInTheDocument();
 });
 
+test("the theme toggle lives in the footer, not the nav", async () => {
+  render(<Stub initialEntries={["/about"]} />);
+  const toggle = await screen.findByRole("button", { name: /light|dark/i });
+  expect(toggle.closest("nav")).toBeNull();
+  expect(toggle.closest("footer")).toBeInTheDocument();
+});
+
 test("current route is marked active in the nav", async () => {
   render(<Stub initialEntries={["/about"]} />);
   expect(await screen.findByRole("link", { current: "page" })).toHaveTextContent(

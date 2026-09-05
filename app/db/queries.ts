@@ -20,17 +20,6 @@ export async function getProjects(
   return db.select().from(project).orderBy(desc(project.sortOrder));
 }
 
-export async function getFeaturedProjects(
-  db: DrizzleD1Database,
-  limit = 3,
-): Promise<ProjectItem[]> {
-  return db
-    .select()
-    .from(project)
-    .orderBy(desc(project.sortOrder))
-    .limit(limit);
-}
-
 export async function getClasses(db: DrizzleD1Database): Promise<ClassItem[]> {
   return db.select().from(class_).orderBy(asc(class_.id));
 }

@@ -190,6 +190,7 @@ a:active {
 
 .footer-links {
   display: flex;
+  align-items: center;
   gap: 20px;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 12px;
@@ -238,7 +239,7 @@ a:active {
   color: var(--muted);
   background: transparent;
   border: 0;
-  padding: 4px 2px;
+  padding: 0;
   cursor: pointer;
   transition: color 0.15s ease;
 }
