@@ -17,7 +17,7 @@ export const education = [
     school: "Littlestown Senior High School",
     degree: "High School Diploma",
     years: "2017–2021",
-    gpa: "4.39",
+    gpa: "4.39 / 4.0",
     honors:
       "Valedictorian, National Honor Society, Future Business Leaders of America, Varsity Football",
   },
